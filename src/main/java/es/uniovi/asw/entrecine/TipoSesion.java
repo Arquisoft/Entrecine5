@@ -1,9 +1,7 @@
 package es.uniovi.asw.entrecine;
 
-public enum TipoSesion {
+public interface TipoSesion {
+	
+	double getPrecio();
 
-	  DIA_ESPECTADOR,
-      MATUTINO,
-      DIARIO,
-      NOCHE
 }
