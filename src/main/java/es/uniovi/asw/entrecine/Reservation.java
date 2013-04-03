@@ -1,4 +1,4 @@
-package es.uniovi.asw.entrecine;
+package main.java.es.uniovi.asw.entrecine;
 
 /**
  * Reservations.

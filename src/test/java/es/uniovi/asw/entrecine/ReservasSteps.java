@@ -1,15 +1,10 @@
-package es.uniovi.asw.entrecine;
+package test.java.es.uniovi.asw.entrecine;
 
 import static org.fest.assertions.Assertions.assertThat;
-import cucumber.api.Format;
-import cucumber.api.java.en.Given;
-import cucumber.api.java.en.Then;
-import cucumber.api.java.en.When;
 import cucumber.api.java.es.Dada;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Cuando;
-import cucumber.runtime.PendingException;
-import es.uniovi.asw.entrecine.Reservation;
+import main.java.es.uniovi.asw.entrecine.Reservation;
 
 public class ReservasSteps {
 	
