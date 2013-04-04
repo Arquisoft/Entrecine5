@@ -9,5 +9,9 @@ public class Matutino implements TipoSesion{
 		// TODO Auto-generated method stub
 		return precio;
 	}
+	public Matutino(double precio) {
+		super();
+		this.precio = precio;
+	}
 
 }

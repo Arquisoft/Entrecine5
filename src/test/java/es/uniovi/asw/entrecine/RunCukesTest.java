@@ -1,4 +1,4 @@
-package test.java.es.uniovi.asw.entrecine;
+package es.uniovi.asw.entrecine;
 
 import cucumber.api.junit.Cucumber;
 import org.junit.runner.RunWith;

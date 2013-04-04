@@ -1,6 +1,6 @@
-package test.java.es.uniovi.asw.entrecine;
+package es.uniovi.asw.entrecine;
 
-import main.java.es.uniovi.asw.entrecine.Reservation;
+import es.uniovi.asw.entrecine.Reservation;
 
 import org.junit.*;
 

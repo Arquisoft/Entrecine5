@@ -17,19 +17,16 @@ public class Sesion {
 	public double getPrecio() {
 		return precio;
 	}
-	public void setPrecio(double precio) {
-		this.precio = precio;
-	}
 	public TipoSesion getTipo() {
 		return tipo;
 	}
 	public void setTipo(TipoSesion tipo) {
 		this.tipo = tipo;
 	}
-	public Sesion(int id, double precio, TipoSesion tipo) {
+	public Sesion(int id, TipoSesion tipo) {
 		super();
 		this.id = id;
-		this.precio = precio;
+		this.precio = tipo.getPrecio();
 		this.tipo = tipo;
 	}
 	

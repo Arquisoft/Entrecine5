@@ -11,4 +11,9 @@ public class DiaEspectador implements TipoSesion{
 		return precio;
 	}
 
+	public DiaEspectador(double precio) {
+		super();
+		this.precio = precio;
+	}
+
 }

@@ -1,4 +1,4 @@
-package test.java.es.uniovi.asw.entrecine;
+package es.uniovi.asw.entrecine;
 
 import static org.fest.assertions.Assertions.assertThat;
 
@@ -8,7 +8,7 @@ import java.util.List;
 import cucumber.api.java.es.Dadas;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Cuando;
-import main.java.es.uniovi.asw.entrecine.Reservation;
+import es.uniovi.asw.entrecine.Reservation;
 
 public class TablaReservasSteps {
 	

@@ -9,5 +9,9 @@ public class Diario implements TipoSesion{
 		// TODO Auto-generated method stub
 		return precio;
 	}
+	public Diario(double precio) {
+		super();
+		this.precio = precio;
+	}
 
 }

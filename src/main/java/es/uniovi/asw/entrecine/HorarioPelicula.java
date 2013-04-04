@@ -1,6 +1,6 @@
 package es.uniovi.asw.entrecine;
 
-import cucumber.api.java.it.Date;
+import java.util.Date;
 
 public class HorarioPelicula {
 	

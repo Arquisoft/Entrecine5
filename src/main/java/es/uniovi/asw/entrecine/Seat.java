@@ -1,15 +1,16 @@
-package main.java.es.uniovi.asw.entrecine;
+package es.uniovi.asw.entrecine;
 
 public class Seat {
 	
 	private int row;
 	private int number;
-	private boolean isBusy;
+	//variable que es 1 si esta ocupado el asiento o 0 si no lo esta
+	private int isBusy;
 	
 	public Seat(int row, int number) {
 		this.row = row;
 		this.number = number;
-		this.isBusy = false;
+		this.isBusy = 0;
 	}
 	
 	public int getRow() {
@@ -20,7 +21,7 @@ public class Seat {
 		return number;
 	}
 	
-	public boolean getIsBusy(){
+	public int getIsBusy(){
 		return isBusy;
 	}
 

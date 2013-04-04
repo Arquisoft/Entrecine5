@@ -9,6 +9,10 @@ public class Noche implements TipoSesion{
 		// TODO Auto-generated method stub
 		return precio;
 	}
+	public Noche(double precio) {
+		super();
+		this.precio = precio;
+	}
 	
 	
 

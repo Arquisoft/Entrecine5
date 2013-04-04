@@ -1,10 +1,9 @@
-package test.java.es.uniovi.asw.entrecine;
+package es.uniovi.asw.entrecine;
 
 import static org.fest.assertions.Assertions.assertThat;
 import cucumber.api.java.es.Dada;
 import cucumber.api.java.es.Entonces;
 import cucumber.api.java.es.Cuando;
-import main.java.es.uniovi.asw.entrecine.*;
 
 public class AsientosSteps {
 	
@@ -21,8 +20,8 @@ public class AsientosSteps {
 	public void Yo_pregunto_su_ocupacion() throws Throwable {
 	}
 
-	@Entonces("^el resultado debe ser (\\s+)$")
-	public void el_resultado_debe_ser(boolean isBusy) throws Throwable {
+	@Entonces("^el resultado sera (\\d+)$")
+	public void el_resultado_sera(int isBusy) throws Throwable {
 		assertThat(isBusy).isEqualTo(s.getIsBusy());
 	}
 

@@ -1,4 +1,4 @@
-package main.java.es.uniovi.asw.entrecine;
+package es.uniovi.asw.entrecine;
 
 public class Cinema {
 	
