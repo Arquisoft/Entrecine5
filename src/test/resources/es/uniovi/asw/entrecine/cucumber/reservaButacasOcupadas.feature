@@ -7,8 +7,8 @@ Característica: Reservas mediante tabla
       | 5       | 3      |
       | 6       | 8      |
       | 10      | 4      |
-    Cuando Yo voy a hacer una reserva
-    Entonces las butacas ya ocupadas seran:
+    Cuando Yo voy a verificar la reserva
+    Entonces las butacas ocupadas seran:
     |fila_butaca  | columna_butaca |
       | 5       | 3      |
       | 6       | 8      |

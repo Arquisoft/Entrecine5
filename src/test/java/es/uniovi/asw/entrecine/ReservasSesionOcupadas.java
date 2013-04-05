@@ -38,11 +38,11 @@ public class ReservasSesionOcupadas {
 		}
 	}
 
-	@Cuando("^Yo voy a hacer una reserva$")
+	@Cuando("^Yo voy a verificar una reserva$")
 	public void Yo_voy_a_hacer_una_reserva() throws Throwable {
 	}
 
-	@Entonces("^las butacas ya ocupadas seran;$")
+	@Entonces("^las butacas ocupadas seran;$")
 	public void las_butacas_ya_ocupadas_seran(List<Entry> ocupadas) throws Throwable {
 		
 		int id = 1;
