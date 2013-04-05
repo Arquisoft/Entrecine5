@@ -27,7 +27,7 @@ public class ReservasSesionOcupadas {
 	private HorarioPelicula horario = new HorarioPelicula(1, pelicula, (long) 1, horaInicio);
 	private Sala sala = new Sala(1, 1);
 
-	@Dadas("^las siguientes butacas reservadas:$")
+	@Dadas("^las siguientes a reservar:$")
 	public void las_siguientes_butacas_reservadas(List<Entry> entries) throws Throwable {
 		int id = 1;
 		for (Entry e : entries) {

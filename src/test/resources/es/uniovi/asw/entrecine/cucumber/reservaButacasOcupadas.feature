@@ -2,7 +2,7 @@
 Característica: Reservas mediante tabla
 
   Escenario: Reservar varias butacas
-    Dadas las siguientes butacas reservadas:
+    Dadas las siguientes butacas a reservar:
       |fila_butaca  | columna_butaca |
       | 5       | 3      |
       | 6       | 8      |
