@@ -27,8 +27,8 @@ public class ReservasSesionOcupadas {
 	private HorarioPelicula horario = new HorarioPelicula(1, pelicula, (long) 1, horaInicio);
 	private Sala sala = new Sala(1, 1);
 
-	@Dadas("^las siguientes a reservar:$")
-	public void las_siguientes_butacas_reservadas(List<Entry> entries) throws Throwable {
+	@Dadas("^las siguientes butacas a reservar:$")
+	public void las_siguientes_butacas_a_reservar(List<Entry> entries) throws Throwable {
 		int id = 1;
 		for (Entry e : entries) {
 			ButacaOcupada butaca = new ButacaOcupada(horario, e.fila_butaca, e.columna_butaca, id, sala);
@@ -38,19 +38,20 @@ public class ReservasSesionOcupadas {
 		}
 	}
 
-	@Cuando("^Yo voy a verificar una reserva$")
-	public void Yo_voy_a_hacer_una_reserva() throws Throwable {
+	@Cuando("^Yo voy a verificar la reserva$")
+	public void Yo_voy_a_verificar_la_reserva() throws Throwable {
 	}
 
-	@Entonces("^las butacas ocupadas seran;$")
-	public void las_butacas_ya_ocupadas_seran(List<Entry> ocupadas) throws Throwable {
+	@Entonces("^las butacas ocupadas seran:$")
+	public void las_butacas_ocupadas_seran(List<Entry> ocupadas) throws Throwable {
 		
 		int id = 1;
 		int i=0;
 		for (Entry e : ocupadas) {
 			ButacaOcupada bt= reservas.get(i).getButacaOcupada();
 			ButacaOcupada butaca = new ButacaOcupada(horario, e.fila_butaca, e.columna_butaca, id, sala);
-			assertThat(bt).isEqualTo(butaca);
+			assertThat(bt.getColumna_butaca()).isEqualTo(butaca.getColumna_butaca());
+			assertThat(bt.getFila_butaca()).isEqualTo(butaca.getFila_butaca());
 			i++;
 			id++;
 		}
