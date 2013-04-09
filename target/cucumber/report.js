@@ -49,14 +49,14 @@ formatter.match({
   "location": "AsientosSteps.una_butaca_concreta(int,int)"
 });
 formatter.result({
-  "duration": 290527963,
+  "duration": 717135477,
   "status": "passed"
 });
 formatter.match({
   "location": "AsientosSteps.Yo_pregunto_su_ocupacion()"
 });
 formatter.result({
-  "duration": 38950,
+  "duration": 56888,
   "status": "passed"
 });
 formatter.match({
@@ -69,7 +69,7 @@ formatter.match({
   "location": "AsientosSteps.el_resultado_sera(int)"
 });
 formatter.result({
-  "duration": 190218,
+  "duration": 221562,
   "status": "passed"
 });
 formatter.uri("\u0027es\\uniovi\\asw\\entrecine\\cucumber\\reservaButacas.feature\u0027");
@@ -143,14 +143,14 @@ formatter.match({
   "location": "ReservasSesion.las_siguientes_butacas_reservadas(ReservasSesion$Entry\u003e)"
 });
 formatter.result({
-  "duration": 27983319,
+  "duration": 61180381,
   "status": "passed"
 });
 formatter.match({
   "location": "ReservasSesion.Yo_voy_a_hacer_una_reserva()"
 });
 formatter.result({
-  "duration": 96015,
+  "duration": 70147,
   "status": "passed"
 });
 formatter.match({
@@ -163,7 +163,7 @@ formatter.match({
   "location": "ReservasSesion.las_butacas_ya_ocupadas_seran(int)"
 });
 formatter.result({
-  "duration": 199276,
+  "duration": 270323,
   "status": "passed"
 });
 formatter.uri("\u0027es\\uniovi\\asw\\entrecine\\cucumber\\reservaButacasOcupadas.feature\u0027");
@@ -267,21 +267,21 @@ formatter.match({
   "location": "ReservasSesionOcupadas.las_siguientes_butacas_a_reservar(ReservasSesionOcupadas$Entry\u003e)"
 });
 formatter.result({
-  "duration": 4340138,
+  "duration": 8778672,
   "status": "passed"
 });
 formatter.match({
   "location": "ReservasSesionOcupadas.Yo_voy_a_verificar_la_reserva()"
 });
 formatter.result({
-  "duration": 37590,
+  "duration": 65870,
   "status": "passed"
 });
 formatter.match({
   "location": "ReservasSesionOcupadas.las_butacas_ocupadas_seran(ReservasSesionOcupadas$Entry\u003e)"
 });
 formatter.result({
-  "duration": 1507251,
+  "duration": 4963773,
   "status": "passed"
 });
 formatter.uri("\u0027es\\uniovi\\asw\\entrecine\\cucumber\\reservas.feature\u0027");
@@ -335,14 +335,14 @@ formatter.match({
   "location": "ReservasSteps.una_reserva_de_butacas(int,double)"
 });
 formatter.result({
-  "duration": 710147,
+  "duration": 793006,
   "status": "passed"
 });
 formatter.match({
   "location": "ReservasSteps.Yo_pregunto_precio_total()"
 });
 formatter.result({
-  "duration": 63406,
+  "duration": 64587,
   "status": "passed"
 });
 formatter.match({
@@ -355,7 +355,7 @@ formatter.match({
   "location": "ReservasSteps.el_resultado_debe_ser(double)"
 });
 formatter.result({
-  "duration": 298461,
+  "duration": 3713099,
   "status": "passed"
 });
 formatter.uri("\u0027es\\uniovi\\asw\\entrecine\\cucumber\\tablaReservas.feature\u0027");
@@ -429,7 +429,7 @@ formatter.match({
   "location": "TablaReservasSteps.las_siguientes_reservas(TablaReservasSteps$Entry\u003e)"
 });
 formatter.result({
-  "duration": 5019489,
+  "duration": 4326032,
   "status": "passed"
 });
 formatter.match({
@@ -442,7 +442,7 @@ formatter.match({
   "location": "TablaReservasSteps.Yo_busco_el_precio_de_la_reserva(int)"
 });
 formatter.result({
-  "duration": 249548,
+  "duration": 266901,
   "status": "passed"
 });
 formatter.match({
@@ -455,7 +455,7 @@ formatter.match({
   "location": "TablaReservasSteps.el_resultado_debe_ser(double)"
 });
 formatter.result({
-  "duration": 316124,
+  "duration": 306680,
   "status": "passed"
 });
 });
