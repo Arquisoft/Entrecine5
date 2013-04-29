@@ -1,0 +1,36 @@
+@(peliculas : List[Pelicula], peliculaForm : Form[Pelicula])
+
+@import helper._
+
+@wrapper("Entrecine") {
+
+	<h1>Ese Admin!</h1>
+	<br /><br />
+
+	<h3>Tengo @peliculas.size() pelicula(s)</h3>
+	
+	@form(routes.Admin.nuevaPelicula(), 'method -> "GET"){
+				<input type="submit" value="Añadir película" class="btn btn-primary">
+	}
+	
+	@for(pelicula <- peliculas){
+		<ul>
+			<li>Título: @pelicula.titulo</li>
+			<li>Género: @pelicula.genero</li>
+			<li>Sinopsis: @pelicula.sinopsis</li>
+			<li>Duración: @pelicula.duracion min</li>
+			<li>Fecha inicio emisión: @pelicula.fechaInicioCartelera.format("dd/MM/yyyy")</li>
+			<li>Fecha fin emisión: @pelicula.fechaFinCartelera.format("dd/MM/yyyy")</li> 
+			
+			<br />
+						
+			@form(routes.Admin.eliminarPelicula(pelicula.id)){
+				<input type="submit" value="Eliminar" class="btn btn-danger">
+			}
+			
+		</ul>
+		}
+		
+	
+    
+}

@@ -1,0 +1,21 @@
+@(peliculaForm : Form[Pelicula])
+
+@import helper._
+
+@wrapper("Admin - Añadir película") {
+
+@form(routes.Admin.crearPelicula()) {	
+		
+		@inputText(peliculaForm("titulo"), '_label -> "Título:", '_showConstraints -> false)
+		@inputText(peliculaForm("genero"), '_label -> "Género:", '_showConstraints -> false)
+		@textarea(peliculaForm("sinopsis"), '_label -> "Sinopsis:", '_showConstraints -> false, 'rows -> 5, 'cols -> 30)
+		@inputText(peliculaForm("duracion"), '_label -> "Duración:", '_showConstraints -> false)
+		@inputText(peliculaForm("fechaInicioCartelera"), '_label -> "Fecha Inicio Cartelera", 'id -> "datepicker")
+		@inputText(peliculaForm("fechaFinCartelera"), '_label -> "Fecha Fin Cartelera", 'id -> "datepicker2")
+		
+		<br />
+		<input type="submit" value="Añadir" class="btn btn-success">	
+		<input type="reset" value="Limpiar" class="btn">
+	} 
+	
+}

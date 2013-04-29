@@ -1,22 +1,15 @@
-.*
-# except for .gitignore and .travis.yml
-!.gitignore
-!.travis.yml
-
-# Ignore Play! working directory #
-db
-eclipse
-lib
-log
 logs
-modules
-precompiled
 project/project
 project/target
 target
 tmp
-test-result
-server.pid
-*.iml
-*.eml
-bin/
+.history
+dist
+/.idea
+/*.iml
+/out
+/.idea_modules
+/.classpath
+/.project
+/RUNNING_PID
+/.settings

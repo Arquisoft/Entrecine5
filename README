@@ -1,0 +1,43 @@
+Entrecine by Grupo 5
+====================
+
+This is an educational project for BDD learning.
+
+ How deploy the project for developing with Eclipse IDE:
+
+ 	- You need Play! Framwork 2.
+
+ 	Steps:
+
+ 		1) Clone this repo.
+
+ 		2) Set project's directory as woking directory.
+
+ 		3) In a sh based shell execute: "play compile && play eclipse with-source=true && play run" (or equivalent for Windows command promt).
+
+ 	
+ 	Now you can import the project into Eclipse IDE and start to develop.
+
+
+
+
+
+Entrecine por Grupo 5
+=====================
+
+Este es un proyecto educativo orientado a aprender y practicar "Desarrollo dirigido por comportamiento".
+
+ Como poner en marcha el proyecto y empezar a desarrollar con Eclipse:
+
+ 	- Necesitas Play! Framwork 2.
+
+ 	Pasos a seguir:
+
+ 		1) Clona este repositorio.
+
+ 		2) Abre una consola de comandos en el directorio que contiene el proyecto.
+
+ 		3) Ejecuta la siguiente línea: "play compile && play eclipse with-source=true && play run" o su equivalente si estas en un entorno Windows.
+
+ 	
+ 	A continuación puedes importar el proyecto desde Eclipse y empezar a trabajar en el.

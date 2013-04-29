@@ -1,0 +1,19 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Map static resources from the /public folder to the /assets URL path
+GET    /assets/*file           controllers.Assets.at(path="/public", file)
+
+# Cliente
+GET    /                       controllers.Cliente.index()
+POST   /pelicula/:id/comprar   controllers.Cliente.comprarEntrada(id: Long)
+
+# Administrador
+GET    /admin                  controllers.Admin.index()
+GET    /admin/nueva            controllers.Admin.nuevaPelicula()
+POST   /admin/nueva/crear      controllers.Admin.crearPelicula()
+POST   /admin/:id/eliminar     controllers.Admin.eliminarPelicula(id: Long)
+
+
+
