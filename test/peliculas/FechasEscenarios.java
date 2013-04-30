@@ -70,4 +70,10 @@ public class FechasEscenarios extends Steps{
 					"iniciarse la sesión");
 	}
 	
+	@Then("la entrada no deberia venderse")
+	public void thenLaEntradaNoDeberiaVenderse() {
+		if (entrada.sesion.horaInicio.after(fechaCompra))
+			throw new RuntimeException("La entrada se ha vendido, y no deberia ");
+	}
+	
 }
