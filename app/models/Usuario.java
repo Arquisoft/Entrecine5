@@ -43,8 +43,8 @@ public class Usuario extends Model {
 
 	@Required
 	@Column(nullable = false, name = "num_tarjeta")
-	public Integer numTarjeta;
-	
+	public Long numTarjeta;
+
 	@OneToMany(mappedBy = "usuario")
 	public List<Entrada> entradas = new ArrayList<Entrada>();
 

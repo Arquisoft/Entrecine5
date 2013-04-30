@@ -12,7 +12,7 @@ object ApplicationBuild extends Build {
     javaCore,
     javaJdbc,
     javaEbean,
-    "org.jbehave" % "jbehave-core" % "3.7.5"
+    "org.jbehave" % "jbehave-core" % "3.8"
   )
 
   val main = play.Project(appName, appVersion, appDependencies).settings(

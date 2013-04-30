@@ -57,7 +57,7 @@ create table usuario (
   contrasena                varchar(255) not null,
   nombre                    varchar(255) not null,
   apellidos                 varchar(255) not null,
-  num_tarjeta               integer not null,
+  num_tarjeta               bigint not null,
   constraint uq_usuario_email unique (email),
   constraint uq_usuario_dni unique (dni),
   constraint pk_usuario primary key (id))
