@@ -6,18 +6,19 @@
 GET    /assets/*file           controllers.Assets.at(path="/public", file)
 
 # Cliente
-GET    /                       controllers.Cliente.index()
-POST   /pelicula/:id/comprar   controllers.Cliente.comprarEntrada(id: Long)
+GET    /                       controllers.ClienteController.index()
+POST   /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: Long)
+GET    /usuario/nuevo          controllers.UsuarioController.registroNuevo()
 
 # Administrador
-GET    /admin                  controllers.Admin.index()
-GET    /admin/nueva            controllers.Admin.nuevaPelicula()
-POST   /admin/nueva/crear      controllers.Admin.crearPelicula()
-POST   /admin/:id/eliminar     controllers.Admin.eliminarPelicula(id: Long)
-GET    /admin/sesiones         controllers.Admin.verSesiones()
-GET    /admin/sesiones/nueva            controllers.Admin.nuevaSesion()
-POST   /admin/sesiones/nueva/crear      controllers.Admin.crearSesion()
-POST   /admin/sesiones/:id/eliminar     controllers.Admin.eliminarSesion(id: Long)
+GET    /admin                  controllers.AdminController.index()
+GET    /admin/nueva            controllers.AdminController.nuevaPelicula()
+POST   /admin/nueva/crear      controllers.AdminController.crearPelicula()
+POST   /admin/:id/eliminar     controllers.AdminController.eliminarPelicula(id: Long)
+GET    /admin/sesiones         controllers.AdminController.verSesiones()
+GET    /admin/sesiones/nueva            controllers.AdminController.nuevaSesion()
+POST   /admin/sesiones/nueva/crear      controllers.AdminController.crearSesion()
+POST   /admin/sesiones/:id/eliminar     controllers.AdminController.eliminarSesion(id: Long)
 
 
 

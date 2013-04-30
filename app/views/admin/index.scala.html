@@ -9,11 +9,11 @@
 
 	<h3>Tengo @peliculas.size() pelicula(s)</h3>
 	
-	@form(routes.Admin.nuevaPelicula(), 'method -> "GET"){
+	@form(routes.AdminController.nuevaPelicula(), 'method -> "GET"){
 				<input type="submit" value="Añadir película" class="btn btn-primary">
 	}
 	
-	@form(routes.Admin.verSesiones(), 'method -> "GET"){
+	@form(routes.AdminController.verSesiones(), 'method -> "GET"){
 				<input type="submit" value="Sesiones" class="btn btn-primary">
 	}
 	
