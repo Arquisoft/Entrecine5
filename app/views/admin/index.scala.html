@@ -91,7 +91,7 @@
 									<b>Hora de fin: </b>@sesion.horaFin.format("hh:mm")<br/>
 									<br/>
 								<div class="btn-group">
-  									<a href="#"><button class="btn btn-small">Editar</button></a>
+  									<a href="@routes.AdminController.editarSesion(sesion.id)"><button class="btn btn-small">Editar</button></a>
   									<a href="@routes.AdminController.eliminarSesion(sesion.id)"><button class="btn btn-danger btn-small">Eliminar</button></a>
 								</div></center>
 								<br/>

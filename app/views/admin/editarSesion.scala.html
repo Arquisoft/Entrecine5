@@ -4,7 +4,11 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@wrapper("Admin - Editar sesión"){
+@head = {
+	<link href="@routes.Assets.at("stylesheets/admin/index.css")" rel="stylesheet" />
+}
+
+@wrapper("Admin - Editar sesión")(head){
 
 @form(routes.AdminController.actualizarSesion()) {	
 

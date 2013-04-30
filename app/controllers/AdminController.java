@@ -137,3 +137,4 @@ public class AdminController extends Controller {
 	static Form<Sala> salaForm = Form.form(Sala.class);
 
 }
+
