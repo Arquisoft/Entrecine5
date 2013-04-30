@@ -1,0 +1,82 @@
+#Usuario
+
+usuarios:
+
+ models.Usuario
+     email: usuario1@email.com
+     contrasena: usuario1
+     dni: 11111111A
+     nombre: Usuaurio1
+     apellidos: Apellido1 Apellido1
+     numTarjeta: 111111111111
+
+ models.Usuario
+     email: usuario2@email.com
+     contrasena: usuario2
+     dni: 22222222A
+     nombre: Usuaurio2
+     apellidos: Apellido2 Apellido2
+     numTarjeta: 222222222222
+
+#Salas
+
+salas:
+
+ models.Sala(sala1)
+      nombre: Sala 1
+
+ models.Sala(sala2)
+      nombre: Sala 2
+
+ models.Sala(sala3)
+      nombre: Sala 3
+
+
+#Peliculas
+
+peliculas:
+
+ models.Pelicula(peli1)
+      titulo: Iron Man 3
+      genero: Acción
+      sinopsis: El Tony Stark to jarto pavo con el traje de aironma
+      duracion: 130
+      fechaInicioCartelera: 2013-27-04
+      fechaFinCartelera: 2013-27-05
+
+ models.Pelicula(peli2)
+      titulo: Posesión infernal
+      genero: Terror
+      sinopsis: Mucho miedo y los malos son muy malos tron, mejor no vaigas
+      duracion: 90
+      fechaInicioCartelera: 2013-17-04
+      fechaFinCartelera: 2013-17-05
+
+
+#TipoSesion
+
+tiposesion:
+
+ models.TipoSesion(diaria)
+      nombre: DIARIA
+      precio: 6.50
+
+ models.TipoSesion(mañana)
+      nombre: MATUTINA
+      precio: 5.00
+
+ models.TipoSesion(noche)
+      nombre: NOCHE
+      precio: 5.50
+
+
+#Sesion
+
+sesiones:
+
+  models.Sesion(sesion1)
+      horaInicio:        2013-17-04 17:00:00.00
+      horaFin:           2013-17-04 19:00:00.00
+      pelicula:          peli1
+      sala:              sala1
+      tipoSesion:        noche
