@@ -1,36 +1,25 @@
-@(peliculas : List[Pelicula], peliculaForm : Form[Pelicula])
+@(peliculas : List[Pelicula], peliculaForm : Form[Pelicula], usuario: Usuario)
 
 @import helper._
 
-@wrapper("Entrecine") {
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/index.css")" rel="stylesheet" />
+}
 
-	<h1>Que pasa Blasa!</h1>
-	<br /><br />
-
-	<h3>Tengo @peliculas.size() pelicula(s) <a href="http://www.youtube.com/watch?v=4WG5TvUEq50">Yo tengo 3 piscina</a></h3>
+@wrapper("Entrecine", usuario)(head) {
 	
-	@for(pelicula <- peliculas){
-		<ul>
-			<li>Título: @pelicula.titulo</li>
-			<li>Género: @pelicula.genero</li>
-			<li>Sinopsis: @pelicula.sinopsis</li>
-			<li>Duración: @pelicula.duracion min</li>
-			<li>Fecha inicio emisión: @pelicula.fechaInicioCartelera.format("dd/MM/yyyy")</li>
-			<li>Fecha fin emisión: @pelicula.fechaFinCartelera.format("dd/MM/yyyy")</li>
-			<li>Sesiones
-			<ul>
-			@for(sesion <- pelicula.sesiones) { 
-				<li> @sesion.id,  @sesion.sala.nombre</li> 
-				}
+	<div class="container-pelis">
+		<div class="row container-pelis-inner">
+			<ul class="thumbnails">
+				@for(pelicula <- peliculas) {
+				<li class="span2">
+    				<a href="" class="thumbnail">
+      				<img src="@pelicula.cartelURL" alt="CARTEL"></a>
+      				<h5 class="text-center">@pelicula.titulo</h3>
+  				</li>
+  				}
 			</ul>
-			</li>
-			<br />
-			
-			@form(routes.Cliente.comprarEntrada(pelicula.id)){
-				<input type="submit" value="Comprar entrada" class="btn btn-primary">
-			}
-			
-		</ul>
-		}
+		</div>
+	</div>
 		    
 }

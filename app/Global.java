@@ -10,15 +10,10 @@ import play.libs.Yaml;
 
 public class Global extends GlobalSettings {
 
-	@SuppressWarnings("rawtypes")
+	@SuppressWarnings("unchecked")
 	@Override
 	public void onStart(Application app) {
 		// super.onStart(app);
-
-		/*
-		 * if (Usuario.find.findRowCount() == 0) { Ebean.save((List)
-		 * Yaml.load("datos-iniciales.yaml")); }
-		 */
 
 		if (Ebean.find(Usuario.class).findRowCount() == 0) {
 			Map<String, List<Object>> all = (Map<String, List<Object>>) Yaml
