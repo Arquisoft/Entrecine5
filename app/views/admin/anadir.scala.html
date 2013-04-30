@@ -5,6 +5,14 @@
 @wrapper("Admin - Añadir película") {
 
 @form(routes.Admin.crearPelicula()) {	
+			
+  		<script>
+  			$(function() {
+   				 $( "#datepicker" ).datepicker();
+   				 $( "#datepicker2" ).datepicker();
+  			});
+ 		 </script>
+	
 		
 		@inputText(peliculaForm("titulo"), '_label -> "Título:", '_showConstraints -> false)
 		@inputText(peliculaForm("genero"), '_label -> "Género:", '_showConstraints -> false)

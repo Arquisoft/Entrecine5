@@ -8,6 +8,7 @@ GET    /assets/*file           controllers.Assets.at(path="/public", file)
 # Cliente
 GET    /                       controllers.Cliente.index()
 POST   /pelicula/:id/comprar   controllers.Cliente.comprarEntrada(id: Long)
+GET    /usuario/nuevo          controllers.Usuario.registroNuevo()
 
 # Administrador
 GET    /admin                  controllers.Admin.index()

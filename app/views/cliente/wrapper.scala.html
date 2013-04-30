@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(header: Html=Html(""))(content: Html)
 
 @import helper.twitterBootstrap._
 
@@ -16,25 +16,47 @@
     	<!-- DatePicker con jQuery UI -->
     	<link href="@routes.Assets.at("stylesheets/smoothness/jquery-ui-1.10.2.custom.min.css")" rel="stylesheet" />
 		<script src="@routes.Assets.at("javascripts/jquery-ui-1.10.2.custom.min.js")"></script>
-		
-  		<script>
-  			$(function() {
-   				 $( "#datepicker" ).datepicker();
-   				 $( "#datepicker2" ).datepicker();
-  			});
- 		 </script>
 		 <!-- DatePicker con jQuery UI -->
-		 
-		 
     	
      	<!-- Twitter Bootstrap -->
         <link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet" media="screen" />  
         <script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
         <!-- Twitter Bootstrap -->
         
+        <!-- Entrecine Stylesheets -->
+        <link href="@routes.Assets.at("stylesheets/cliente/wrapper.css")" rel="stylesheet" />
+        <!-- Entrecine Stylesheets -->
+        
+    	@header
+        
         <title>@title</title>
-    </head>
-    <body>
+    	</head>
+        <body>
+
+		
+		<div class="navbar navbar-fixed-top">
+  			<div class="navbar-inner">
+     			<a class="btn btn-navbar"></a>
+      			<a href="@routes.Cliente.index" class="brand">&nbsp;Entrecine</a>
+        		<ul class="nav pull-right">
+          			<li><a href="@routes.Usuario.registroNuevo">Registrarse</a></li>
+          			<li class="divider-vertical"></li>
+         	 		<li class="dropdown">
+            			<a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesión&nbsp;<strong class="caret"></strong></a>
+            			<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
+              				<form>
+              					<label>E-mail:</label>
+  								<input type="text" class="input-login input-medium">
+  								<label>Contraseña:</label>
+  								<input type="password" class="input-login input-small">
+  								<button type="submit" class="btn btn-success btn-mini">Entrar</button>
+							</form>
+            			</div>
+          			</li>
+        		</ul>
+     		 </div>
+    	</div>
+		
         @content
     </body>
 </html>

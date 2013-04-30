@@ -2,12 +2,64 @@
 
 @import helper._
 
-@wrapper("Entrecine") {
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/index.css")" rel="stylesheet" />
+}
+
+@wrapper("Entrecine")(head) {
 
 	<h1>Que pasa Blasa!</h1>
 	<br /><br />
 
 	<h3>Tengo @peliculas.size() pelicula(s) <a href="http://www.youtube.com/watch?v=4WG5TvUEq50">Yo tengo 3 piscina</a></h3>
+	
+	<div class="container-pelis">
+		<div class="row container-pelis-inner">
+	<ul class="thumbnails">
+
+  <li class="span2">
+    <a href="#" class="thumbnail">
+      <img src="http://el-nerdvana.com/wp-content/uploads/2013/04/Iron-Man-3-Soundtrack-Cover.jpg" alt=""></a>
+      <h3>Iron Man 3</h3>
+      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <form>
+				<input type="submit" value="Comprar entrada" class="btn btn-primary">
+		</form>
+  </li>
+  <li class="span2">
+    <a href="#" class="thumbnail">
+      <img src="http://el-nerdvana.com/wp-content/uploads/2013/04/Iron-Man-3-Soundtrack-Cover.jpg" alt=""></a>
+           <h3>Iron Man 3</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <form>
+				<input type="submit" value="Comprar entrada" class="btn btn-primary">
+			</form>
+    
+  </li>
+  <li class="span2">
+    <a href="#" class="thumbnail">
+      <img src="http://el-nerdvana.com/wp-content/uploads/2013/04/Iron-Man-3-Soundtrack-Cover.jpg" alt=""></a>
+            <h3>Iron Man 3</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <form>
+				<input type="submit" value="Comprar entrada" class="btn btn-primary">
+			</form>
+    
+  </li>
+    <li class="span2">
+    <a href="#" class="thumbnail">
+      <img src="http://el-nerdvana.com/wp-content/uploads/2013/04/Iron-Man-3-Soundtrack-Cover.jpg" alt=""></a>
+            <h3>Iron Man 3</h3>
+            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+      <form>
+				<input type="submit" value="Comprar entrada" class="btn btn-primary">
+			</form>
+    
+  </li>
+</ul>
+	</div>
+	</div>
+	
 	
 	@for(pelicula <- peliculas){
 		<ul>
