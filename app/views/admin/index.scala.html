@@ -13,6 +13,10 @@
 				<input type="submit" value="Añadir película" class="btn btn-primary">
 	}
 	
+	@form(routes.Admin.verSesiones(), 'method -> "GET"){
+				<input type="submit" value="Sesiones" class="btn btn-primary">
+	}
+	
 	@for(pelicula <- peliculas){
 		<ul>
 			<li>Título: @pelicula.titulo</li>

@@ -14,6 +14,10 @@ GET    /admin                  controllers.Admin.index()
 GET    /admin/nueva            controllers.Admin.nuevaPelicula()
 POST   /admin/nueva/crear      controllers.Admin.crearPelicula()
 POST   /admin/:id/eliminar     controllers.Admin.eliminarPelicula(id: Long)
+GET    /admin/sesiones         controllers.Admin.verSesiones()
+GET    /admin/sesiones/nueva            controllers.Admin.nuevaSesion()
+POST   /admin/sesiones/nueva/crear      controllers.Admin.crearSesion()
+POST   /admin/sesiones/:id/eliminar     controllers.Admin.eliminarSesion(id: Long)
 
 
 
