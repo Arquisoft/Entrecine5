@@ -5,13 +5,13 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.usuario.registro;
 
-public class Usuario extends Controller{
+public class UsuarioController extends Controller{
 	
 	public static Result registroNuevo(){
 		return ok(registro.render());
 	}
 	
 	
-	static Form<Usuario> usuarioForm = Form.form(Usuario.class);
+	static Form<UsuarioController> usuarioForm = Form.form(UsuarioController.class);
 
 }

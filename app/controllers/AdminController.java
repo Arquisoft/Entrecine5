@@ -7,7 +7,7 @@ import play.mvc.Result;
 import views.html.admin.anadir;
 import views.html.admin.index;
 
-public class Admin extends Controller {
+public class AdminController extends Controller {
 
 	public static Result index() {
 		return ok(index.render(Pelicula.all(), peliculaForm));
@@ -26,7 +26,7 @@ public class Admin extends Controller {
 		}
 
 		Pelicula.create(formularioCumplimentado.get());
-		return redirect(routes.Admin.index());
+		return redirect(routes.AdminController.index());
 
 	}
 
@@ -34,7 +34,7 @@ public class Admin extends Controller {
 
 		Pelicula.remove(id);
 
-		return redirect(routes.Cliente.index());
+		return redirect(routes.ClienteController.index());
 	}
 
 	static Form<Pelicula> peliculaForm = Form.form(Pelicula.class);

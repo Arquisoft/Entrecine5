@@ -24,6 +24,7 @@ create table pelicula (
   genero                    varchar(255),
   sinopsis                  varchar(255),
   duracion                  integer,
+  cartel_url                varchar(255),
   fecha_inicio_cartelera    timestamp not null,
   fecha_fin_cartelera       timestamp,
   constraint pk_pelicula primary key (id))

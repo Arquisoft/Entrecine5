@@ -29,6 +29,9 @@ public class Pelicula extends Model {
 	public String genero;
 	public String sinopsis;
 	public Integer duracion;
+	
+	@Column(name = "cartel_url")
+	public String cartelURL;
 
 	@Column(nullable = false, name = "fecha_inicio_cartelera")
 	public Date fechaInicioCartelera;

@@ -65,8 +65,9 @@ peliculas:
 - &peli1 !!models.Pelicula
   titulo: Iron Man 3
   genero: Acción
-  sinopsis: El Tony Stark to jarto pavo con el traje de aironma
+  sinopsis: El Tony Stark to jarto pavo con el traje de aironmá
   duracion: 130
+  cartelURL: /assets/images/caratulas/ironman3.jpg
   fechaInicioCartelera: 2013-27-04
   fechaFinCartelera: 2013-27-05
 
@@ -75,6 +76,7 @@ peliculas:
   genero: Terror
   sinopsis: Mucho miedo y los malos son muy malos tron, mejor no vaigas
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-01
   fechaFinCartelera: 2013-17-31
 
@@ -83,6 +85,7 @@ peliculas:
   genero: Friki
   sinopsis: Tíos con espadas y tal
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-06
   fechaFinCartelera: 2013-17-12
   
@@ -91,6 +94,7 @@ peliculas:
   genero: Acción
   sinopsis: Explosiones y tal
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-07
   fechaFinCartelera: 2013-17-09
   
@@ -99,6 +103,7 @@ peliculas:
   genero: Romance
   sinopsis: Alguien ve esto???
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-21
   fechaFinCartelera: 2013-17-22
   
@@ -107,6 +112,7 @@ peliculas:
   genero: Deportivo
   sinopsis: Un equipo de waterpolo se ahoga entero en una piscina en la final del campeonato estatal de Masachusset
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-04
   fechaFinCartelera: 2013-17-05
   
@@ -115,6 +121,7 @@ peliculas:
   genero: Terror
   sinopsis: Beli era un zombie del montón, pero gracias a la ayuda de los profesores de as, llegó a ser el no va mas en zombies.(Como si fuera el PLay entre los zombies)
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-04
   fechaFinCartelera: 2013-17-05
   
@@ -123,6 +130,7 @@ peliculas:
   genero: Terror
   sinopsis: vamos ralph, tu puedes
   duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
   fechaInicioCartelera: 2013-17-04
   fechaFinCartelera: 2013-17-05
   
