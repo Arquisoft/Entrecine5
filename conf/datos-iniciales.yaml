@@ -65,7 +65,7 @@ peliculas:
 - &peli1 !!models.Pelicula
   titulo: Iron Man 3
   genero: Acción
-  sinopsis: El Tony Stark to jarto pavo con el traje de aironmá
+  sinopsis: El Tony Stark to jarto pavo con el traje de aironmá 
   duracion: 130
   cartelURL: /assets/images/caratulas/ironman3.jpg
   fechaInicioCartelera: 2013-27-04

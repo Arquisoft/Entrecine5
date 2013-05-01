@@ -1,13 +1,10 @@
-.container-pelis
-{
-border: 1px solid white;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+.container-pelis {
+	border: 1px solid white;
+	width: 70%;
+	margin: 50px auto;
 }
 
-.container-pelis-inner
-{
-  width: 90%;
-  margin: 10px auto;
+.container-pelis-inner {
+	width: 90%;
+	margin: 10px auto;
 }

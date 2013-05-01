@@ -1,15 +1,12 @@
-body 
-{
-padding-top: 40px;
+body {
+	padding-top: 40px;
 }
 
-.input-login
-{
-height: 10px !important;
+.input-login {
+	height: 10px !important;
 }
 
-.btn-login
-{
-margin-left: 10px;
-margin-bottom: 15px;
+.btn-login {
+	margin-left: 10px;
+	margin-bottom: 15px;S
 }
