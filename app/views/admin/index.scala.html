@@ -9,17 +9,25 @@
 
 	<h3>Tengo @peliculas.size() pelicula(s)</h3>
 	
-	@form(routes.AdminController.nuevaPelicula(), 'method -> "GET"){
-				<input type="submit" value="Añadir película" class="btn btn-primary">
-	}
+	<div class="btn-group">
+		
+		<button class="btn">
+  		@form(routes.AdminController.nuevaPelicula(), 'method -> "GET"){
+			<input class="btn" type="submit" value="Añadir película"/>
+		}
+		</button>
+		<button class="btn">
+		@form(routes.AdminController.verSesiones(), 'method -> "GET"){
+			<input class="btn" type="submit" value="Sesiones"/>
+		}
+		</button>
+	</div>
 	
-	@form(routes.AdminController.verSesiones(), 'method -> "GET"){
-				<input type="submit" value="Sesiones" class="btn btn-primary">
-	}
+	<br/><br/>
 	
 	@for(pelicula <- peliculas){
+		<strong>Título: @pelicula.titulo</strong>
 		<ul>
-			<li>Título: @pelicula.titulo</li>
 			<li>Género: @pelicula.genero</li>
 			<li>Sinopsis: @pelicula.sinopsis</li>
 			<li>Duración: @pelicula.duracion min</li>

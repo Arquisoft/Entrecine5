@@ -10,17 +10,17 @@
 	<h3>Actualmente hay @sesiones.size() sesiones(s)</h3>
 	
 	@form(routes.AdminController.nuevaSesion(), 'method -> "GET"){
-				<input type="submit" value="A�adir Sesion" class="btn btn-primary">
+				<input type="submit" value="Añadir Sesión" class="btn btn-primary">
 	}
 	
 	@for(sesion <- sesiones){
 		<b>Sesion @sesion.id</b>
 		<ul>
-			<li>Pelicula: @sesion.pelicula.titulo</li>
+			<li>Película: @sesion.pelicula.titulo</li>
 			<li>Sala: @sesion.sala.nombre</li>
 			<li>Tipo: @sesion.tipoSesion.nombre</li>
-			<li>Hora de inicio: @sesion.horaInicio.format("hh:mm:ss")</li>
-			<li>Hora de fin: @sesion.horaFin.format("hh:mm:ss")</li>
+			<li>Hora de inicio: @sesion.horaInicio.format("hh:mm")</li>
+			<li>Hora de fin: @sesion.horaFin.format("hh:mm")</li>
 			
 			<br />
 			

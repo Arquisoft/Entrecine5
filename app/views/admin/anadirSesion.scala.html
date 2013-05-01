@@ -2,11 +2,15 @@
 
 @import helper._
 
-@wrapper("Admin - A�adir sesi�n") {
+@wrapper("Admin - Añadir sesión") {
 
 @form(routes.AdminController.crearSesion()) {	
 		
-		<b>EN CONSTRUCCION...</b>
+		@inputText(sesionForm("pelicula"), '_label -> "Película:", '_showConstraints -> false)
+		@inputText(sesionForm("sala"), '_label -> "Sala:", '_showConstraints -> false)
+		@inputText(sesionForm("tipo"), '_label -> "Tipo:", '_showConstraints -> false)
+		@inputText(sesionForm("horaInicio"), '_label -> "Hora de inicio:", '_showConstraints -> false)
+		@inputText(sesionForm("horaFin"), '_label -> "Hora de fin:", '_showConstraints -> false)
 		
 		<br />
 		<input type="submit" value="Añadir" class="btn btn-success">	
