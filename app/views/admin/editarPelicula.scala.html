@@ -1,0 +1,78 @@
+@(pelicula : Pelicula, peliculaForm : Form[Pelicula]) 
+
+
+@import helper._
+@import helper.twitterBootstrap._
+
+
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/fichaPelicula.css")" rel="stylesheet" />
+
+	<script language="JavaScript" type="text/JavaScript">
+		
+		function verCaratula(url) {
+			window.open(url,'@pelicula.titulo','height=700, width=700, left=10, top=10, resizable=no, scrollbars=no, toolbar=no, menubar=no, location=no, directories=no, status=no')
+		}
+		
+	</script>
+	
+}
+
+@wrapper("Admin - editarPelicula"){
+
+@form(routes.AdminController.crearPelicula()) {	
+
+<div class="content-center">
+	<div class="media">
+		<a class="pull-left thumbnail" href="JavaScript:verCaratula('@pelicula.cartelURL');">
+					<img class="media-object span4" src="@pelicula.cartelURL">
+  		</a>
+  		<div class="media-body thumbnail">
+   		
+    		<h3 class="media-heading">@pelicula.titulo</h3>     		
+    		
+    		<br /><p>
+    		
+			<strong>Género:&nbsp;</strong><input type="text" id="genero" value=@pelicula.genero >
+	        </p><p>
+    		<strong>Duración:&nbsp;</strong><input type="text" id="duracion" value=@pelicula.duracion min >
+    		</p><p>
+    		<strong>Primera emisión:&nbsp;</strong><input type="text" id="1emision" value=@pelicula.fechaInicioCartelera.format("dd/MM/yyyy")>
+    		</p><p>
+    		<strong>Última emisión:&nbsp;</strong><input type="text" id="ulemision" value=@pelicula.fechaFinCartelera.format("dd/MM/yyyy")>
+    		</p>
+ 			<span class="help-inline"></span>
+	        <span class="help-block"></span> 
+  		</div>
+	</div>
+<div class="content-center">
+	<table class="table table-hover">
+  		<caption>Sesiones disponibles</caption>
+  		<thead>
+   		 <tr>
+      		<th>lunes</th>
+      		<th>martes</th>
+      		<th>miércoles</th>
+      		<th>jueves</th>
+    	 </tr>
+  		</thead>
+  
+  		<tbody>
+   		 <tr>
+      		<td><a href="#">17:00</a></td>
+      		<td><a href="#">19:00</a></td>
+      		<td></td>
+      		<td><a href="#">16:45</a></td>
+   		 </tr>
+   		   <tr>
+      		<td><a href="#">13:30</a></td>
+      		<td><a href="#">16:45</a></td>
+      		<td><a href="#">17:00</a></td>
+      		<td><a href="#">19:00</a></td>
+   		 </tr>
+  		</tbody>
+	</table>
+</div>
+
+}
+}

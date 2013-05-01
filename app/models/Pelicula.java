@@ -54,6 +54,10 @@ public class Pelicula extends Model {
 		find.ref(id).delete();
 	}
 
+	public static void update(Pelicula pelicula,Long id){
+		
+		pelicula.update();
+	}
 	public static Finder<Long, Pelicula> find = new Finder<Long, Pelicula>(
 			Long.class, Pelicula.class);
 

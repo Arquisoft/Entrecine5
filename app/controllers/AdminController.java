@@ -12,6 +12,7 @@ import views.html.admin.sesiones;
 import views.html.admin.anadirSesion;
 import views.html.admin.salas;
 import views.html.admin.anadirSala;
+import views.html.admin.editarPelicula;
 
 public class AdminController extends Controller {
 
@@ -43,6 +44,15 @@ public class AdminController extends Controller {
 		return redirect(routes.ClienteController.index());
 	}
 	
+	public static Result editarPelicula(Long id){
+		
+		Pelicula pelicula = Pelicula.find.ref(id);
+
+		return ok(editarPelicula.render(pelicula,peliculaForm));
+	}
+	
+
+	
 	public static Result verSesiones() {
 		return ok(sesiones.render(Sesion.all(), sesionForm));
 	}
@@ -67,6 +77,7 @@ public class AdminController extends Controller {
 	public static Result eliminarSesion(Long id) {
 
 		Sesion.remove(id);
+
 
 		return redirect(routes.AdminController.verSesiones());
 	}
@@ -95,6 +106,7 @@ public class AdminController extends Controller {
 	public static Result eliminarSala(String id) {
 
 		Sala.remove(id);
+		
 
 		return redirect(routes.AdminController.verSalas());
 	}

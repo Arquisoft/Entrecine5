@@ -46,6 +46,9 @@
 			@form(routes.AdminController.eliminarPelicula(pelicula.id)){
 				<input type="submit" value="Eliminar" class="btn btn-danger">
 			}
+			@form(routes.AdminController.editarPelicula(pelicula.id)){
+				<input type="submit" value="Editar" class="btn btn-danger">
+			}
 			
 		</ul>
 		}
