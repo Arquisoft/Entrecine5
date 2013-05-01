@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #Usuario
 
 usuarios:
@@ -244,4 +245,252 @@ sesiones:
   horaFin:           2013-17-04 19:00:00.00
   pelicula:          *peli8
   sala:              *sala5
+=======
+#Usuario
+
+usuarios:
+
+- !!models.Usuario
+ email: usuario1@email.com
+ contrasena: usuario1
+ dni: 11111111A
+ nombre: Usuaurio1
+ apellidos: Apellido1 Apellido1
+ numTarjeta: 111111111111
+
+- !!models.Usuario
+ email: usuario3@email.com
+ contrasena: usuario3
+ dni: 13333333A
+ nombre: Usuaurio3
+ apellidos: Apellido3 Apellido3
+ numTarjeta: 1111133333333333
+ 
+- !!models.Usuario
+ email: usuario4@email.com
+ contrasena: usuario4
+ dni: 144444444A
+ nombre: Usuaurio4
+ apellidos: Apellido4 Apellido4
+ numTarjeta: 4444444444
+
+- !!models.Usuario
+ email: usuario2@email.com
+ contrasena: usuario2
+ dni: 22222222A
+ nombre: Usuaurio2
+ apellidos: Apellido2 Apellido2
+ numTarjeta: 222222222222
+ 
+
+#Salas
+
+salas:
+
+- &sala1 !!models.Sala
+  nombre: Sala 1
+
+- &sala2 !!models.Sala
+  nombre: Sala 2
+
+- &sala3 !!models.Sala
+  nombre: Sala 3
+  
+- &sala4 !!models.Sala
+  nombre: Sala 4
+
+- &sala5 !!models.Sala
+  nombre: Sala 5
+
+- &sala6 !!models.Sala
+  nombre: Sala 6
+
+
+#Peliculas
+
+peliculas:
+
+- &peli1 !!models.Pelicula
+  titulo: Iron Man 3
+  genero: Acción
+  sinopsis: El Tony Stark to jarto pavo con el traje de aironmá 
+  duracion: 130
+  cartelURL: /assets/images/caratulas/ironman3.jpg
+  fechaInicioCartelera: 2013-27-04
+  fechaFinCartelera: 2013-27-05
+
+- &peli2 !!models.Pelicula
+  titulo: Posesión infernal
+  genero: Terror
+  sinopsis: Mucho miedo y los malos son muy malos tron, mejor no vaigas
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-01
+  fechaFinCartelera: 2013-17-31
+
+- &peli3 !!models.Pelicula
+  titulo: Oblivion
+  genero: Friki
+  sinopsis: Tíos con espadas y tal
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-06
+  fechaFinCartelera: 2013-17-12
+  
+- &peli4 !!models.Pelicula
+  titulo: Combustión
+  genero: Acción
+  sinopsis: Explosiones y tal
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-07
+  fechaFinCartelera: 2013-17-09
+  
+- &peli5 !!models.Pelicula
+  titulo: Alacrán enamorado
+  genero: Romance
+  sinopsis: Alguien ve esto???
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-21
+  fechaFinCartelera: 2013-17-22
+  
+- &peli6 !!models.Pelicula
+  titulo: Un gran equipo
+  genero: Deportivo
+  sinopsis: Un equipo de waterpolo se ahoga entero en una piscina en la final del campeonato estatal de Masachusset
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-04
+  fechaFinCartelera: 2013-17-05
+  
+- &peli7 !!models.Pelicula
+  titulo: Memorias de un zombie adolescente
+  genero: Terror
+  sinopsis: Beli era un zombie del montón, pero gracias a la ayuda de los profesores de as, llegó a ser el no va mas en zombies.(Como si fuera el PLay entre los zombies)
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-04
+  fechaFinCartelera: 2013-17-05
+  
+- &peli8 !!models.Pelicula
+  titulo: ¡Rompe Ralph!
+  genero: Terror
+  sinopsis: vamos ralph, tu puedes
+  duracion: 90
+  cartelURL: /assets/images/caratulas/no.png
+  fechaInicioCartelera: 2013-17-04
+  fechaFinCartelera: 2013-17-05
+  
+#TipoSesion
+
+tiposesion:
+
+- &diaria !!models.TipoSesion
+  nombre: DIARIA
+  precio: 6.50
+
+- &matutina !!models.TipoSesion
+  nombre: MATUTINA
+  precio: 5.00
+
+- &noche !!models.TipoSesion
+  nombre: NOCHE
+  precio: 5.50
+
+
+#Sesion
+
+sesiones:
+
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli1
+  sala:              *sala1
+  tipoSesion:        *noche
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 08:00:00.00
+  horaFin:           2013-17-04 10:00:00.00
+  pelicula:          *peli1
+  sala:              *sala2
+  tipoSesion:        *diaria
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli2
+  sala:              *sala3
+  tipoSesion:        *noche
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli2
+  sala:              *sala6
+  tipoSesion:        *diaria
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli3
+  sala:              *sala1
+  tipoSesion:        *noche
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli4
+  sala:              *sala2
+  tipoSesion:        *diaria
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli5
+  sala:              *sala3
+  tipoSesion:        *diaria
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli5
+  sala:              *sala2
+  tipoSesion:        *noche
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli6
+  sala:              *sala3
+  tipoSesion:        *matutina
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli6
+  sala:              *sala1
+  tipoSesion:        *noche
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli7
+  sala:              *sala3
+  tipoSesion:        *diaria
+  
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli7
+  sala:              *sala4
+  tipoSesion:        *noche
+
+- !!models.Sesion
+  horaInicio:        2013-17-04 17:00:00.00
+  horaFin:           2013-17-04 19:00:00.00
+  pelicula:          *peli8
+  sala:              *sala5
+>>>>>>> faeb9728ab57920262f61a2308c697c27978f5c5
   tipoSesion:        *matutina

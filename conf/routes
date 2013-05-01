@@ -7,7 +7,8 @@ GET    /assets/*file           controllers.Assets.at(path="/public", file)
 
 # Cliente
 GET    /                       controllers.ClienteController.index()
-POST   /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: Long)
+GET    /pelicula/:id           controllers.ClienteController.verFichaPelicula(id: Long)
+GET    /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: Long)
 GET    /usuario/nuevo          controllers.UsuarioController.registroNuevo()
 
 # Administrador

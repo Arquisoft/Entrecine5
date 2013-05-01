@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .container-pelis
 {
 border: 1px solid white;
@@ -10,4 +11,15 @@ border: 1px solid white;
 {
   width: 90%;
   margin: 10px auto;
+=======
+.container-pelis {
+	border: 1px solid white;
+	width: 70%;
+	margin: 50px auto;
+}
+
+.container-pelis-inner {
+	width: 90%;
+	margin: 10px auto;
+>>>>>>> faeb9728ab57920262f61a2308c697c27978f5c5
 }

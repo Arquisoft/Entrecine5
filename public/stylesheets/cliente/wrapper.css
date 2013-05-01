@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 body 
 {
 padding-top: 40px;
@@ -12,4 +13,17 @@ height: 10px !important;
 {
 margin-left: 10px;
 margin-bottom: 15px;
+=======
+body {
+	padding-top: 40px;
+}
+
+.input-login {
+	height: 10px !important;
+}
+
+.btn-login {
+	margin-left: 10px;
+	margin-bottom: 15px;S
+>>>>>>> faeb9728ab57920262f61a2308c697c27978f5c5
 }

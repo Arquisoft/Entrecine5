@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @(pelicula : Pelicula)
 
 @wrapper("Comprar entrada para: @pelicula.titulo", null)(){
@@ -18,4 +19,44 @@
    		 </tr>
   		</tbody>
 	</table>
+=======
+@(pelicula : Pelicula)
+
+
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/fichaPelicula.css")" rel="stylesheet" />
+}
+
+@wrapper("Comprar entrada para: @pelicula.titulo", null)(head){
+	
+	
+<div class="content-center">
+	<table class="table table-hover">
+  		<caption>Sesiones disponibles</caption>
+  		<thead>
+   		 <tr>
+      		<th>lunes</th>
+      		<th>martes</th>
+      		<th>miércoles</th>
+      		<th>jueves</th>
+    	 </tr>
+  		</thead>
+  
+  		<tbody>
+   		 <tr>
+      		<td><a href="#">17:00</a></td>
+      		<td><a href="#">19:00</a></td>
+      		<td></td>
+      		<td><a href="#">16:45</a></td>
+   		 </tr>
+   		   <tr>
+      		<td><a href="#">13:30</a></td>
+      		<td><a href="#">16:45</a></td>
+      		<td><a href="#">17:00</a></td>
+      		<td><a href="#">19:00</a></td>
+   		 </tr>
+  		</tbody>
+	</table>
+</div>
+>>>>>>> faeb9728ab57920262f61a2308c697c27978f5c5
 }

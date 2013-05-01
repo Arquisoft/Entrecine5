@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @(peliculas : List[Pelicula], peliculaForm : Form[Pelicula], usuario: Usuario)
 
 @import helper._
@@ -23,3 +24,30 @@
 	</div>
 		    
 }
+=======
+@(peliculas : List[Pelicula], peliculaForm : Form[Pelicula], usuario: Usuario)
+
+@import helper._
+
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/index.css")" rel="stylesheet" />
+}
+
+@wrapper("Entrecine", usuario)(head) {
+	
+	<div class="container-pelis">
+		<div class="row container-pelis-inner">
+			<ul class="thumbnails">
+				@for(pelicula <- peliculas) {
+				<li class="span2">
+    				<a href="@routes.ClienteController.verFichaPelicula(pelicula.id)" class="thumbnail">
+      				<img src="@pelicula.cartelURL" alt="CARTEL"></a>
+      				<h5 class="text-center">@pelicula.titulo</h3>
+  				</li>
+  				}
+			</ul>
+		</div>
+	</div>
+		    
+}
+>>>>>>> faeb9728ab57920262f61a2308c697c27978f5c5
