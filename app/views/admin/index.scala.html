@@ -16,6 +16,13 @@
 			<input class="btn" type="submit" value="Añadir película"/>
 		}
 		</button>
+		
+		<button class="btn">
+		@form(routes.AdminController.verSalas(), 'method -> "GET"){
+			<input class="btn" type="submit" value="Salas"/>
+		}
+		</button>
+		
 		<button class="btn">
 		@form(routes.AdminController.verSesiones(), 'method -> "GET"){
 			<input class="btn" type="submit" value="Sesiones"/>

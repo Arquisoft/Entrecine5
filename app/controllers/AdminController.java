@@ -1,6 +1,7 @@
 package controllers;
 
 import models.Pelicula;
+import models.Sala;
 import models.Sesion;
 import play.data.Form;
 import play.mvc.Controller;
@@ -9,6 +10,8 @@ import views.html.admin.anadir;
 import views.html.admin.index;
 import views.html.admin.sesiones;
 import views.html.admin.anadirSesion;
+import views.html.admin.salas;
+import views.html.admin.anadirSala;
 
 public class AdminController extends Controller {
 
@@ -67,8 +70,37 @@ public class AdminController extends Controller {
 
 		return redirect(routes.AdminController.verSesiones());
 	}
+	
+	public static Result verSalas() {
+		return ok(salas.render(Sala.all(), salaForm));
+	}
+	
+	public static Result nuevaSala() {
+		return ok(anadirSala.render(salaForm));
+	}
+	
+	public static Result crearSala() {
+
+		Form<Sala> formularioCumplimentado = salaForm.bindFromRequest();
+
+		if (formularioCumplimentado.hasErrors()) {
+			return badRequest(salas.render(Sala.all(), salaForm));
+		}
+
+		Sala.create(formularioCumplimentado.get());
+		return redirect(routes.AdminController.verSalas());
+
+	}
+	
+	public static Result eliminarSala(String id) {
+
+		Sala.remove(id);
+
+		return redirect(routes.AdminController.verSalas());
+	}
 
 	static Form<Pelicula> peliculaForm = Form.form(Pelicula.class);
 	static Form<Sesion> sesionForm = Form.form(Sesion.class);
+	static Form<Sala> salaForm = Form.form(Sala.class);
 
 }

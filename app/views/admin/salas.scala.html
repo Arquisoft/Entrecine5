@@ -1,0 +1,39 @@
+@(salas : List[Sala], salaForm : Form[Sala])
+
+@import helper._
+
+@wrapper("Admin - Salas") {
+
+	<h1>SALAS</h1>
+	<br /><br />
+
+	<h3>Actualmente hay @salas.size() sala(s)</h3>
+	
+	@form(routes.AdminController.nuevaSala(), 'method -> "GET"){
+				<input type="submit" value="Añadir Sesión" class="btn btn-primary">
+	}
+	
+	@for(sala <- salas){
+		<strong>@sala.nombre</strong>
+		@for(sesion <- sala.sesiones){
+		<ul>
+			<li><b>Sesión @sesion.id</b></li>
+			<li>Película: @sesion.pelicula.titulo</li>
+			<li>Sala: @sesion.sala.nombre</li>
+			<li>Tipo: @sesion.tipoSesion.nombre</li>
+			<li>Hora de inicio: @sesion.horaInicio.format("hh:mm")</li>
+			<li>Hora de fin: @sesion.horaFin.format("hh:mm")</li>
+		</ul>
+		}
+			
+			<br />
+			
+			@form(routes.AdminController.eliminarSala(sala.nombre)){
+				<input type="submit" value="Eliminar" class="btn btn-danger">
+			}
+			
+		}
+		
+	
+    
+}

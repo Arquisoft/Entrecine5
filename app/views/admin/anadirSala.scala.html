@@ -1,0 +1,16 @@
+@(salaForm : Form[Sala])
+
+@import helper._
+
+@wrapper("Admin - Añadir sala") {
+
+@form(routes.AdminController.crearSala()) {	
+		
+		@inputText(salaForm("nombre"), '_label -> "Nombre:", '_showConstraints -> false)
+		
+		<br />
+		<input type="submit" value="Añadir" class="btn btn-success">	
+		<input type="reset" value="Limpiar" class="btn">
+	} 
+	
+}
