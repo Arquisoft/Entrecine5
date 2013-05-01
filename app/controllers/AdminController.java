@@ -57,7 +57,7 @@ public class AdminController extends Controller {
 		}
 
 		Sesion.create(formularioCumplimentado.get());
-		return redirect(routes.Admin.verSesiones());
+		return redirect(routes.AdminController.verSesiones());
 
 	}
 	
@@ -65,7 +65,7 @@ public class AdminController extends Controller {
 
 		Sesion.remove(id);
 
-		return redirect(routes.Admin.verSesiones());
+		return redirect(routes.AdminController.verSesiones());
 	}
 
 	static Form<Pelicula> peliculaForm = Form.form(Pelicula.class);
