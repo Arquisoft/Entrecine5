@@ -1,0 +1,15 @@
+.content-center {
+	border: 1px solid #D3D3D3;
+	width: 30%;
+	margin: 50px auto;
+	padding: 20px 20px 0px 20px;
+}
+
+.content-inner {
+	width: 70%;
+	margin: 20px auto 0px auto;
+}
+
+.content-buttons-inner {
+	margin: 0px;
+}

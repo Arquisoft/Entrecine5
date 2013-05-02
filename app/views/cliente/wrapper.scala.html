@@ -1,5 +1,6 @@
 @(title: String, usuario: Usuario)(header: Html=Html(""))(content: Html) 
 
+@import helper._
 @import helper.twitterBootstrap._
 
 <!DOCTYPE html>
@@ -44,17 +45,17 @@
          	 		<li class="dropdown">
             			<a class="dropdown-toggle" href="#" data-toggle="dropdown">Iniciar Sesión&nbsp;<strong class="caret"></strong></a>
             			<div class="dropdown-menu" style="padding: 15px; padding-bottom: 0px;">
-              				<form>
+              				 @form(routes.UsuarioController.iniciarSesion()) {
               					<label>E-mail:</label>
-  								<input type="text" class="input-login input-medium">
+  								<input type="email" name="email" class="input-login input-medium" required>
   								<label>Contraseña:</label>
-  								<input type="password" class="input-login input-small">
+  								<input type="password" name="contrasena" class="input-login input-small" required>
   								<button type="submit" class="btn btn-success btn-mini btn-login">Entrar</button>
-							</form>
+							}
             			</div>
           			</li>
           			} else {
-          				<li><a href="#">usuario.nombre</a></li>
+          				<li><a href="#">@usuario.nombre</a></li>
           				<li class="divider-vertical"></li>
 
          	 			<li class="dropdown">

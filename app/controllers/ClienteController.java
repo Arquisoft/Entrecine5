@@ -13,7 +13,7 @@ public class ClienteController extends Controller {
 	
 
 	public static Result index() {
-		return ok(index.render(Pelicula.all(), peliculaForm, UsuarioController.isSesionIniciada()));
+		return ok(index.render(Pelicula.all(), peliculaForm, null));
 	}
 	
 	public static Result verFichaPelicula(Long id){

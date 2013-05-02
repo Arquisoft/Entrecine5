@@ -3,13 +3,12 @@
 # ~~~~
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /assets/*file           controllers.Assets.at(path="/public", file)
+GET    /assets/*file                  controllers.Assets.at(path="/public", file)
 
 # Cliente
-GET    /                       controllers.ClienteController.index()
-GET    /pelicula/:id           controllers.ClienteController.verFichaPelicula(id: Long)
-GET    /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: Long)
-GET    /usuario/nuevo          controllers.UsuarioController.registroNuevo()
+GET    /                              controllers.ClienteController.index()
+GET    /pelicula/:id                  controllers.ClienteController.verFichaPelicula(id: Long)
+GET    /pelicula/:id/comprar          controllers.ClienteController.comprarEntrada(id: Long)
 
 # Administrador
 GET    /admin                  controllers.AdminController.index()
@@ -25,3 +24,9 @@ GET    /admin/salas            controllers.AdminController.verSalas()
 GET    /admin/salas/nueva               controllers.AdminController.nuevaSala()
 POST   /admin/salas/nueva/crear         controllers.AdminController.crearSala()
 POST   /admin/salas/:id/eliminar        controllers.AdminController.eliminarSala(id: String)
+
+# Usuario
+GET    /usuario/nuevo                 controllers.UsuarioController.registroNuevo()
+POST   /usuario/nuevo                 controllers.UsuarioController.crearUsuario()
+POST   /usuario/login                 controllers.UsuarioController.iniciarSesion()
+
