@@ -9,7 +9,6 @@ GET    /assets/*file                  controllers.Assets.at(path="/public", file
 GET    /                       controllers.ClienteController.index()
 GET    /pelicula/:id           controllers.ClienteController.verFichaPelicula(id: Long)
 GET    /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: Long)
-GET    /usuario/nuevo          controllers.UsuarioController.registroNuevo()
 
 # Administrador
 GET    /admin                  controllers.AdminController.index()
@@ -24,3 +23,9 @@ POST   /admin/sesion/:id/eliminar     controllers.AdminController.eliminarSesion
 GET    /admin/sala/nueva               controllers.AdminController.nuevaSala()
 POST   /admin/sala/nueva/crear         controllers.AdminController.crearSala()
 POST   /admin/sala/:id/eliminar        controllers.AdminController.eliminarSala(id: String)
+
+# Usuario
+GET    /usuario/nuevo          controllers.UsuarioController.registroNuevo()
+GET    /usuario/inicioSesion          controllers.UsuarioController.iniciarSesion()
+GET    /usuario/nuevo/crear          controllers.UsuarioController.crearUsuario()
+
