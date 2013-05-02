@@ -1,8 +1,42 @@
-@import helper._
+@(usuarioForm: Form[Usuario])
 
-@wrapper("Entrecine") {
+@import helper._ 
+@import helper.twitterBootstrap._ 
 
-	<h1>Que pasa Blasa!</h1>
-	<br /><br />
-		    
+@head = {
+	<link href="@routes.Assets.at("stylesheets/usuario/registro.css")" rel="stylesheet" />
+} 
+
+@wrapper("Entrecine: Nuevo Usuario", null)(head) {
+
+<div class="content-center">
+	@form(routes.UsuarioController.crearUsuario){
+
+		<fieldset>
+			<legend>Registro de Usuario</legend>
+			<div class="content-inner">
+				<label>E-Mail:</label> 
+				<input type="email" name="email" autocomplete="on" placeholder="usuario@@entrecine.com" required> 
+				<label>Contraseña:</label> 
+				<input type="password" name="contrasena" pattern=".{6,12}" placeholder="Entre 6-12 caracteres" required> 
+				<label>Repita Contraseña:</label> 
+				<input type="password" name="contrasenaAgain" pattern=".{6,12}" placeholder="Deben coincidir" required> 
+				<label>DNI:</label> 
+				<input type="text" name="dni" autocomplete="on" pattern="^((([A-Z]|[a-z])\d{8})|(\d{8}([A-Z]|[a-z])))$" placeholder="0000000X ó X00000000" required> 
+				<label>Nombre:</label> 
+				<input type="text" name="nombre" autocomplete="on" required> 
+				<label>Apellidos:</label> 
+				<input type="text" name="apellidos" autocomplete="on" required>
+				<label>Número de tarjeta:</label> 
+				<input type="text" name="numTarjeta" autocomplete="on" pattern="^\d+" required>
+			</div>
+				<div class="form-actions">
+				<div class="content-buttons-inner text-right">
+  					<button type="submit" class="btn btn-primary btn-small">Crear cuenta</button>
+  				</div>
+				</div>
+		</fieldset>
+	} 
+</div>
+
 }

@@ -14,5 +14,7 @@ dist
 /.project
 /RUNNING_PID
 /.settings
+/.cache
 Thumbs.db
 .Trash*
+.DS_Store
