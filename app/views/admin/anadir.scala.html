@@ -3,7 +3,12 @@
 @import helper._
 @import helper.twitterBootstrap._
 
-@wrapper("Admin - Añadir película") {
+@head = {
+	<link href="@routes.Assets.at("stylesheets/admin/index.css")" rel="stylesheet" />
+}
+
+@wrapper("Admin - Añadir película")(head) {
+
 
 @form(routes.AdminController.crearPelicula()) {	
 			
@@ -19,12 +24,13 @@
 		@inputText(peliculaForm("genero"), '_label -> "Género:", '_showConstraints -> false)
 		@textarea(peliculaForm("sinopsis"), '_label -> "Sinopsis:", '_showConstraints -> false, 'rows -> 5, 'cols -> 30)
 		@inputText(peliculaForm("duracion"), '_label -> "Duración:", '_showConstraints -> false)
-		@inputText(peliculaForm("fechaInicioCartelera"), '_label -> "Fecha Inicio Cartelera", 'id -> "datepicker")
-		@inputText(peliculaForm("fechaFinCartelera"), '_label -> "Fecha Fin Cartelera", 'id -> "datepicker2")
+		@inputText(peliculaForm("fechaInicioCartelera"), '_label -> "Fecha Inicio Cartelera:", 'id -> "datepicker")
+		@inputText(peliculaForm("fechaFinCartelera"), '_label -> "Fecha Fin Cartelera:", 'id -> "datepicker2")
 		
 		<br />
 		<input type="submit" value="Añadir" class="btn btn-success">	
 		<input type="reset" value="Limpiar" class="btn">
+		
 	} 
 
 }

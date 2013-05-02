@@ -1,4 +1,4 @@
-@(title: String)(content: Html)
+@(title: String)(header: Html=Html(""))(content: Html)
 
 @import helper.twitterBootstrap._
 
@@ -24,6 +24,8 @@
         <link href="@routes.Assets.at("stylesheets/bootstrap.min.css")" rel="stylesheet" media="screen" />  
         <script src="@routes.Assets.at("javascripts/bootstrap.min.js")"></script>
         <!-- Twitter Bootstrap -->
+        
+        @header
         
         <title>@title</title>
     </head>

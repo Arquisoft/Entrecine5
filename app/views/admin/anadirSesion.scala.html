@@ -2,7 +2,11 @@
 
 @import helper._
 
-@wrapper("Admin - Añadir sesión") {
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/index.css")" rel="stylesheet" />
+}
+
+@wrapper("Admin - Añadir sesión")(head) {
 
 @form(routes.AdminController.crearSesion()) {	
 		

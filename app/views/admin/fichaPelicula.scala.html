@@ -1,26 +1,18 @@
-@(pelicula : Pelicula, peliculaForm : Form[Pelicula]) 
-
+@(pelicula : Pelicula) 
 
 @import helper._
-@import helper.twitterBootstrap._
-
 
 @head = {
-	<link href="@routes.Assets.at("stylesheets/cliente/fichaPelicula.css")" rel="stylesheet" />
+	<link href="@routes.Assets.at("stylesheets/admin/fichaPelicula.css")" rel="stylesheet" />
 
-	<script language="JavaScript" type="text/JavaScript">
-		
+	<script>
 		function verCaratula(url) {
 			window.open(url,'@pelicula.titulo','height=700, width=700, left=10, top=10, resizable=no, scrollbars=no, toolbar=no, menubar=no, location=no, directories=no, status=no')
 		}
-		
 	</script>
-	
 }
 
-@wrapper("Admin - editarPelicula")(head){
-
-@form(routes.AdminController.crearPelicula()) {	
+@wrapper("Ficha: @pelicula.titulo")(head){
 
 <div class="content-center">
 	<div class="media">
@@ -29,22 +21,28 @@
   		</a>
   		<div class="media-body thumbnail">
    		
-    		<h3 class="media-heading">@pelicula.titulo</h3>     		
-    		
+    		<h3 class="media-heading">@pelicula.titulo     		
+    			<a href="@routes.AdminController.editarPelicula(pelicula.id)"><button class="btn btn-primary btn-small btn-editar">Editar</button></a>
+    			<a href="@routes.AdminController.eliminarPelicula(pelicula.id)"><button class="btn btn-danger btn-small btn-eliminar">Eliminar</button></a>
+    		</h3>
+
     		<br /><p>
-    		
-			<strong>Género:&nbsp;</strong><input type="text" id="genero" value=@pelicula.genero >
-	        </p><p>
-    		<strong>Duración:&nbsp;</strong><input type="text" id="duracion" value=@pelicula.duracion min >
+    		<strong>Género:&nbsp;</strong>@pelicula.genero
     		</p><p>
-    		<strong>Primera emisión:&nbsp;</strong><input type="text" id="1emision" value=@pelicula.fechaInicioCartelera.format("dd/MM/yyyy")>
+    		<strong>Duración:&nbsp;</strong>@pelicula.duracion min.
     		</p><p>
-    		<strong>Última emisión:&nbsp;</strong><input type="text" id="ulemision" value=@pelicula.fechaFinCartelera.format("dd/MM/yyyy")>
+    		<strong>Primera emisión:&nbsp;</strong>@pelicula.fechaInicioCartelera.format("dd/MM/yyyy")
+    		</p><p>
+    		<strong>Última emisión:&nbsp;</strong>@pelicula.fechaFinCartelera.format("dd/MM/yyyy")
     		</p>
- 			<span class="help-inline"></span>
-	        <span class="help-block"></span> 
+ 
   		</div>
 	</div>
+	<div id="sinopsis" class="thumbnail sinopsis">
+	<p>@pelicula.sinopsis</p>
+</div>
+</div>
+
 <div class="content-center">
 	<table class="table table-hover">
   		<caption>Sesiones disponibles</caption>
@@ -74,5 +72,4 @@
 	</table>
 </div>
 
-}
 }

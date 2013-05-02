@@ -2,7 +2,11 @@
 
 @import helper._
 
-@wrapper("Admin - Añadir sala") {
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/index.css")" rel="stylesheet" />
+}
+
+@wrapper("Admin - Añadir sala")(head) {
 
 @form(routes.AdminController.crearSala()) {	
 		

@@ -1,58 +1,104 @@
-@(peliculas : List[Pelicula], peliculaForm : Form[Pelicula])
+@(peliculas : List[Pelicula], peliculaForm : Form[Pelicula], salas : List[Sala], salaForm : Form[Sala], sesiones : List[Sesion], sesionForm : Form[Sesion])
 
 @import helper._
 
-@wrapper("Entrecine") {
+@head = {
+	<link href="@routes.Assets.at("stylesheets/admin/index.css")" rel="stylesheet" />
+}
 
-	<h1>Ese Admin!</h1>
+@wrapper("Entrecine")(head) {
+
+	<h1>Administración Entrecine 5</h1>
 	<br /><br />
-
-	<h3>Tengo @peliculas.size() pelicula(s)</h3>
 	
-	<div class="btn-group">
-		
-		<button class="btn">
-  		@form(routes.AdminController.nuevaPelicula(), 'method -> "GET"){
-			<input class="btn" type="submit" value="Añadir película"/>
-		}
-		</button>
-		
-		<button class="btn">
-		@form(routes.AdminController.verSalas(), 'method -> "GET"){
-			<input class="btn" type="submit" value="Salas"/>
-		}
-		</button>
-		
-		<button class="btn">
-		@form(routes.AdminController.verSesiones(), 'method -> "GET"){
-			<input class="btn" type="submit" value="Sesiones"/>
-		}
-		</button>
+	<div class="tabbable"> <!-- Only required for left/right tabs -->
+	
+  		<ul class="nav nav-tabs">
+    		<li class="active"><a href="#peliculas" data-toggle="tab">Películas</a></li>
+    		<li><a href="#salas" data-toggle="tab">Salas</a></li>
+    		<li><a href="#sesiones" data-toggle="tab">Sesiones</a></li>
+    		<li class="dropdown">
+    			<a class="dropdown-toggle" data-toggle="dropdown" href="#">
+        			Añadir
+        			<b class="caret"></b>
+      			</a>
+    			<ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu">
+					<li><a tabindex="-1" href="@routes.AdminController.nuevaPelicula()">Película</a></li>
+  					<li><a tabindex="-1" href="@routes.AdminController.nuevaSala()">Sala</a></li>
+ 					<li><a tabindex="-1" href="@routes.AdminController.nuevaSesion()">Sesión</a></li>
+   			 	</ul>
+  			</li>
+  		</ul>
+  		
+  		<div class="tab-content">
+    		<div class="tab-pane active" id="peliculas">
+				
+				<div class="container-pelis">
+					<div class="row container-pelis-inner">
+						<ul class="thumbnails">
+						@for(pelicula <- peliculas) {
+							<li class="span2">
+    							<a href="@routes.AdminController.verFichaPelicula(pelicula.id)" class="thumbnail">
+      							<img src="@pelicula.cartelURL" alt="CARTEL"></a>
+      							<h5 class="text-center">@pelicula.titulo</h3>
+  							</li>
+  						}
+						</ul>
+					</div>
+				</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="salas">
+				<div class="content-center">
+				@for(sala <- salas){
+					<div class="thumbnail">
+					<center><h3>@sala.nombre</h3>
+   			 		<div class="btn-group">
+  						<a href="#"><button class="btn btn-small">Editar</button></a>
+  						<a href="@routes.AdminController.eliminarSala(sala.nombre)"><button class="btn btn-danger btn-small">Eliminar</button></a>
+					</div></center>
+					<br/>
+					<div class="row-fluid">
+					@for(sesion <- sala.sesiones){
+  						<div class="span4 thumbnail">
+  								<b>Sesión @sesion.id</b>
+								<ul>
+									<li>Película: @sesion.pelicula.titulo</li>
+									<li>Sala: @sesion.sala.nombre</li>
+									<li>Tipo: @sesion.tipoSesion.nombre</li>
+									<li>Hora de inicio: @sesion.horaInicio.format("hh:mm")</li>
+									<li>Hora de fin: @sesion.horaFin.format("hh:mm")</li>
+								</ul>
+  						</div>
+  						}
+					</div>
+					</div>
+					<br/><br/>
+				}
+				</div>
+    		</div>
+    		
+    		<div class="tab-pane" id="sesiones">
+	
+				@for(sesion <- sesiones){
+					<div class="span4 thumbnail">
+  								<center><h4>Sesión @sesion.id</h4>
+  								
+									<b>Película: </b>@sesion.pelicula.titulo<br/>
+									<b>Sala: </b>@sesion.sala.nombre<br/>
+									<b>Tipo: </b>@sesion.tipoSesion.nombre<br/>
+									<b>Hora de inicio: </b>@sesion.horaInicio.format("hh:mm")<br/>
+									<b>Hora de fin: </b>@sesion.horaFin.format("hh:mm")<br/>
+									<br/>
+								<div class="btn-group">
+  									<a href="#"><button class="btn btn-small">Editar</button></a>
+  									<a href="@routes.AdminController.eliminarSesion(sesion.id)"><button class="btn btn-danger btn-small">Eliminar</button></a>
+								</div></center>
+								<br/>
+  					</div>
+				}
+    		</div>
+  		</div>
 	</div>
-	
-	<br/><br/>
-	
-	@for(pelicula <- peliculas){
-		<strong>Título: @pelicula.titulo</strong>
-		<ul>
-			<li>Género: @pelicula.genero</li>
-			<li>Sinopsis: @pelicula.sinopsis</li>
-			<li>Duración: @pelicula.duracion min</li>
-			<li>Fecha inicio emisión: @pelicula.fechaInicioCartelera.format("dd/MM/yyyy")</li>
-			<li>Fecha fin emisión: @pelicula.fechaFinCartelera.format("dd/MM/yyyy")</li> 
-			
-			<br />
-						
-			@form(routes.AdminController.eliminarPelicula(pelicula.id)){
-				<input type="submit" value="Eliminar" class="btn btn-danger">
-			}
-			@form(routes.AdminController.editarPelicula(pelicula.id)){
-				<input type="submit" value="Editar" class="btn btn-danger">
-			}
-			
-		</ul>
-		}
-		
-	
     
 }

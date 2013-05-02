@@ -1,0 +1,21 @@
+.content-center {
+	width: 60%;
+	margin: 50px auto;
+}
+
+.media-body {
+	padding-left: 20px;
+	padding-top: 20px;
+}
+
+#sinopsis{
+	margin-top: 30px;
+	padding: 15px;
+}
+
+.btn-editar, .btn-eliminar{
+	margin-right: 15px;
+	margin-top: 6px;
+	display: inline;
+	float: right;
+}
