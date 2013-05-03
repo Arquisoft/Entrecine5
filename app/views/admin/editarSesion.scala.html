@@ -1,0 +1,19 @@
+@(sesion : Sesion, sesionForm : Form[Sesion]) 
+
+
+@import helper._
+@import helper.twitterBootstrap._
+
+@wrapper("Admin - Editar sesión"){
+
+@form(routes.AdminController.actualizarSesion()) {	
+
+    		<h3 class="media-heading">Sesión: @sesion.id</h3>     		
+    		
+    		@inputText(sesionForm("horaInicio"), '_label -> "Hora de inicio:", 'type -> "time", 'value -> sesion.horaInicio.format("hh:mm"))
+			@inputText(sesionForm("horaFin"), '_label -> "Hora de fin:", 'type -> "time", 'value -> sesion.horaFin.format("hh:mm"))
+			<br />
+		<input type="submit" value="Guardar" class="btn btn-success">
+
+}
+}

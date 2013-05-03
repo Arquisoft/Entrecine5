@@ -13,6 +13,7 @@ import views.html.admin.anadirSesion;
 import views.html.admin.salas;
 import views.html.admin.anadirSala;
 import views.html.admin.editarPelicula;
+import views.html.admin.editarSesion;
 
 public class AdminController extends Controller {
 
@@ -79,6 +80,27 @@ public class AdminController extends Controller {
 		Sesion.remove(id);
 
 
+		return redirect(routes.AdminController.verSesiones());
+	}
+	
+	public static Result editarSesion(Long id){
+		
+		Sesion sesion = Sesion.find.ref(id);
+
+		return ok(editarSesion.render(sesion,sesionForm));
+	}
+	
+	public static Result actualizarSesion(){
+		
+		Form<Sesion> formularioCumplimentado = sesionForm.bindFromRequest();
+
+		if (formularioCumplimentado.hasErrors()) {
+			return badRequest(sesiones.render(Sesion.all(), sesionForm));
+		}
+
+		Sesion sesion = formularioCumplimentado.get();
+		
+		Sesion.create(sesion);
 		return redirect(routes.AdminController.verSesiones());
 	}
 	
