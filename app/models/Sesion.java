@@ -58,5 +58,8 @@ public class Sesion extends Model {
 	public static Finder<Long, Sesion> find = new Finder<Long, Sesion>(
 			Long.class, Sesion.class);
 	
+	public static void update(Sesion sesion,Long id){
+		sesion.update();
+	}
 
 }

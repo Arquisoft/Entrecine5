@@ -1,0 +1,40 @@
+@(sesiones : List[Sesion], sesionForm : Form[Sesion])
+
+@import helper._
+
+@wrapper("Admin - Sesiones") {
+
+	<h1>SESIONES</h1>
+	<br /><br />
+
+	<h3>Actualmente hay @sesiones.size() sesiones(s)</h3>
+	
+	@form(routes.AdminController.nuevaSesion(), 'method -> "GET"){
+				<input type="submit" value="Añadir Sesión" class="btn btn-primary">
+	}
+	
+	@for(sesion <- sesiones){
+		<b>Sesion @sesion.id</b>
+		<ul>
+			<li>Película: @sesion.pelicula.titulo</li>
+			<li>Sala: @sesion.sala.nombre</li>
+			<li>Tipo: @sesion.tipoSesion.nombre</li>
+			<li>Hora de inicio: @sesion.horaInicio.format("hh:mm")</li>
+			<li>Hora de fin: @sesion.horaFin.format("hh:mm")</li>
+			
+			<br />
+			
+			@form(routes.AdminController.eliminarSesion(sesion.id)){
+				<input type="submit" value="Eliminar" class="btn btn-danger">
+			}
+			
+			@form(routes.AdminController.editarSesion(sesion.id)){
+				<input type="submit" value="Eliminar" class="btn btn-danger">
+			}
+			
+		</ul>
+		}
+		
+	
+    
+}
