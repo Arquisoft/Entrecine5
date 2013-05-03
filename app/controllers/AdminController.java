@@ -100,7 +100,7 @@ public class AdminController extends Controller {
 
 		Sesion sesion = formularioCumplimentado.get();
 		
-		Sesion.create(sesion);
+		Sesion.update(sesion, sesion.id);
 		return redirect(routes.AdminController.verSesiones());
 	}
 	
