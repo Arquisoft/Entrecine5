@@ -12,7 +12,6 @@ GET    /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: 
 
 # Administrador
 GET    /admin                  controllers.AdminController.index()
-<<<<<<< HEAD
 GET    /admin/pelicula/nueva            controllers.AdminController.nuevaPelicula()
 POST   /admin/pelicula/nueva/crear      controllers.AdminController.crearPelicula()
 GET    /admin/pelicula/:id           controllers.AdminController.verFichaPelicula(id: Long)
@@ -26,29 +25,6 @@ POST   /admin/sala/nueva/crear         controllers.AdminController.crearSala()
 POST   /admin/sala/:id/eliminar        controllers.AdminController.eliminarSala(id: String)
 
 # Usuario
-GET    /usuario/nuevo          controllers.UsuarioController.registroNuevo()
-GET    /usuario/inicioSesion          controllers.UsuarioController.iniciarSesion()
-GET    /usuario/nuevo/crear          controllers.UsuarioController.crearUsuario()
-
-=======
-GET    /admin/nueva            controllers.AdminController.nuevaPelicula()
-POST   /admin/nueva/crear      controllers.AdminController.crearPelicula()
-POST   /admin/:id/eliminar     controllers.AdminController.eliminarPelicula(id: Long)
-GET    /admin/:id/editarPelicula       controllers.AdminController.editarPelicula(id: Long)
-GET    /admin/sesiones         controllers.AdminController.verSesiones()
-GET    /admin/sesiones/nueva            controllers.AdminController.nuevaSesion()
-POST   /admin/sesiones/nueva/crear      controllers.AdminController.crearSesion()
-POST   /admin/sesiones/:id/eliminar     controllers.AdminController.eliminarSesion(id: Long)
-GET    /admin/sesiones/:id/editar     controllers.AdminController.editarSesion(id: Long)
-POST   /admin/sesiones     controllers.AdminController.actualizarSesion()
-GET    /admin/salas            controllers.AdminController.verSalas()
-GET    /admin/salas/nueva               controllers.AdminController.nuevaSala()
-POST   /admin/salas/nueva/crear         controllers.AdminController.crearSala()
-POST   /admin/salas/:id/eliminar        controllers.AdminController.eliminarSala(id: String)
-
-# Usuario
 GET    /usuario/nuevo                 controllers.UsuarioController.registroNuevo()
 POST   /usuario/nuevo                 controllers.UsuarioController.crearUsuario()
 POST   /usuario/login                 controllers.UsuarioController.iniciarSesion()
-
->>>>>>> fcbf0d2d5f9fff55f1a4fed7c755afc97c488298

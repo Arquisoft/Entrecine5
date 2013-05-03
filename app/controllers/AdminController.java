@@ -8,14 +8,11 @@ import play.mvc.Controller;
 import play.mvc.Result;
 import views.html.admin.anadir;
 import views.html.admin.index;
+import views.html.admin.editarSesion;
 import views.html.admin.anadirSesion;
 import views.html.admin.anadirSala;
 import views.html.admin.editarPelicula;
-<<<<<<< HEAD
 import views.html.admin.fichaPelicula;
-=======
-import views.html.admin.editarSesion;
->>>>>>> fcbf0d2d5f9fff55f1a4fed7c755afc97c488298
 
 public class AdminController extends Controller {
 
@@ -67,7 +64,6 @@ public class AdminController extends Controller {
 	public static Result nuevaSesion() {
 		return ok(anadirSesion.render(sesionForm));
 	}
-<<<<<<< HEAD
 
 	public static Result crearSesion() {
 
@@ -80,8 +76,7 @@ public class AdminController extends Controller {
 
 		Sesion.create(formularioCumplimentado.get());
 		return redirect(routes.AdminController.index());
-
-=======
+	}
 	
 	public static Result editarSesion(Long id){
 		
@@ -95,18 +90,14 @@ public class AdminController extends Controller {
 		Form<Sesion> formularioCumplimentado = sesionForm.bindFromRequest();
 
 		if (formularioCumplimentado.hasErrors()) {
-			return badRequest(sesiones.render(Sesion.all(), sesionForm));
+			return badRequest(index.render(Pelicula.all(), peliculaForm, Sala.all(),
+					salaForm, Sesion.all(), sesionForm));
 		}
 
 		Sesion sesion = formularioCumplimentado.get();
 		
 		Sesion.update(sesion, sesion.id);
-		return redirect(routes.AdminController.verSesiones());
-	}
-	
-	public static Result verSalas() {
-		return ok(salas.render(Sala.all(), salaForm));
->>>>>>> fcbf0d2d5f9fff55f1a4fed7c755afc97c488298
+		return redirect(routes.AdminController.index());
 	}
 
 	public static Result eliminarSesion(Long id) {
