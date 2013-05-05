@@ -17,6 +17,7 @@ POST   /admin/pelicula/nueva/crear      controllers.AdminController.crearPelicul
 GET    /admin/pelicula/:id           controllers.AdminController.verFichaPelicula(id: Long)
 POST   /admin/pelicula/:id/eliminar     controllers.AdminController.eliminarPelicula(id: Long)
 GET    /admin/pelicula/:id/editar       controllers.AdminController.editarPelicula(id: Long)
+POST   /admin/pelicula/:id/editar/guardar   controllers.AdminController.guardarCambiosPelicula(id: Long)
 GET    /admin/sesion/nueva            controllers.AdminController.nuevaSesion()
 POST   /admin/sesion/nueva/crear      controllers.AdminController.crearSesion()
 POST   /admin/sesion/:id/eliminar     controllers.AdminController.eliminarSesion(id: Long)

@@ -1,11 +1,17 @@
 package controllers;
 
+import java.util.HashMap;
+import java.util.Map;
+
+import org.apache.commons.collections.map.HashedMap;
+
 import models.Pelicula;
 import models.Sala;
 import models.Sesion;
 import play.data.Form;
 import play.mvc.Controller;
 import play.mvc.Result;
+import sun.misc.FpUtils;
 import views.html.admin.anadir;
 import views.html.admin.index;
 import views.html.admin.editarSesion;
@@ -38,6 +44,7 @@ public class AdminController extends Controller {
 		Form<Pelicula> formularioCumplimentado = peliculaForm.bindFromRequest();
 
 		if (formularioCumplimentado.hasErrors()) {
+			
 			return badRequest(index.render(Pelicula.all(), peliculaForm, Sala.all(),
 					salaForm, Sesion.all(), sesionForm));
 		}
@@ -61,6 +68,21 @@ public class AdminController extends Controller {
 		return ok(editarPelicula.render(pelicula, peliculaForm));
 	}
 
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static Result guardarCambiosPelicula(Long id){
+
+		Form<Pelicula> formularioCumplimentado = editarPeliculaForm.bindFromRequest();
+		
+		if (formularioCumplimentado.hasErrors()) {
+			return badRequest(index.render(Pelicula.all(), peliculaForm, Sala.all(),
+					salaForm, Sesion.all(), sesionForm));
+		}
+		
+		Pelicula.update(formularioCumplimentado.get(),id);
+		
+		return redirect(routes.AdminController.index());
+		
+	}
 	public static Result nuevaSesion() {
 		return ok(anadirSesion.render(sesionForm));
 	}
@@ -84,6 +106,7 @@ public class AdminController extends Controller {
 
 		return ok(editarSesion.render(sesion,sesionForm));
 	}
+
 	
 	public static Result actualizarSesion(){
 		
@@ -133,6 +156,7 @@ public class AdminController extends Controller {
 	}
 
 	static Form<Pelicula> peliculaForm = Form.form(Pelicula.class);
+	static Form<Pelicula> editarPeliculaForm = Form.form(Pelicula.class);
 	static Form<Sesion> sesionForm = Form.form(Sesion.class);
 	static Form<Sala> salaForm = Form.form(Sala.class);
 
