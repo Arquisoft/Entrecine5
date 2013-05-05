@@ -1,4 +1,4 @@
-@(pelicula : Pelicula, peliculaForm : Form[Pelicula]) 
+@(pelicula : Pelicula, editarPeliculaForm : Form[Pelicula]) 
 
 
 @import helper._
@@ -20,7 +20,7 @@
 
 @wrapper("Admin - editarPelicula")(head){
 
-@form(routes.AdminController.crearPelicula()) {	
+
 
 <div class="content-center">
 	<div class="media">
@@ -29,21 +29,34 @@
   		</a>
   		<div class="media-body thumbnail">
    		
-    		<h3 class="media-heading">@pelicula.titulo</h3>     		
+    		<h3 class="media-heading">@pelicula.titulo</h3> 
+    		
+    		    		
+@form(routes.AdminController.guardarCambiosPelicula(pelicula.id)) {	    		
+    		
+    		<script>
+  			$(function() {
+   				 $( "#datepicker" ).datepicker();
+   				 $( "#datepicker2" ).datepicker();
+  			});
+ 		 </script>
+    		
     		
     		<br /><p>
-    		
-			<strong>Género:&nbsp;</strong><input type="text" id="genero" value=@pelicula.genero >
+ 			<input type="hidden" id="titulo" name="titulo"value=@pelicula.titulo >
+   			<strong>Género:&nbsp;</strong><input type="text" id="genero" name="genero"value=@pelicula.genero >
 	        </p><p>
-    		<strong>Duración:&nbsp;</strong><input type="text" id="duracion" value=@pelicula.duracion min >
+    		<strong>Duración:&nbsp;</strong><input type="text" id="duracion" name="duracion" value=@pelicula.duracion min >
     		</p><p>
-    		<strong>Primera emisión:&nbsp;</strong><input type="text" id="1emision" value=@pelicula.fechaInicioCartelera.format("dd/MM/yyyy")>
+    		<strong>Primera emisión:&nbsp;</strong><input type="text" id="datepicker" name="fechaInicioCartelera" value=@pelicula.fechaInicioCartelera.format("dd/MM/yyyy")>
     		</p><p>
-    		<strong>Última emisión:&nbsp;</strong><input type="text" id="ulemision" value=@pelicula.fechaFinCartelera.format("dd/MM/yyyy")>
+    		<strong>Última emisión:&nbsp;</strong><input type="text" id="datepicker2" name="fechaFinCartelera" value=@pelicula.fechaFinCartelera.format("dd/MM/yyyy")>
     		</p>
- 			<span class="help-inline"></span>
-	        <span class="help-block"></span> 
+    		
   		</div>
+  		<br />
+  		<input type="submit" value="Guardar cambios" class="btn btn-success">
+  		}
 	</div>
 <div class="content-center">
 	<table class="table table-hover">
@@ -74,5 +87,5 @@
 	</table>
 </div>
 
-}
+
 }
