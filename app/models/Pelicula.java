@@ -58,6 +58,13 @@ public class Pelicula extends Model {
 		
 		pelicula.update(id);
 	}
+	
+	public static List<Pelicula> getPeliculasCartelera(){
+		
+		return find.where().ge("fechaInicioCartelera", new Date()).le("fechaFinCartelera", new Date()).findList();
+		
+	}
+	
 	public static Finder<Long, Pelicula> find = new Finder<Long, Pelicula>(
 			Long.class, Pelicula.class);
 

@@ -3,31 +3,32 @@
 # ~~~~
 
 # Map static resources from the /public folder to the /assets URL path
-GET    /assets/*file                  controllers.Assets.at(path="/public", file)
+GET    /assets/*file                        controllers.Assets.at(path="/public", file)
 
 # Cliente
-GET    /                       controllers.ClienteController.index()
-GET    /pelicula/:id           controllers.ClienteController.verFichaPelicula(id: Long)
-GET    /pelicula/:id/comprar   controllers.ClienteController.comprarEntrada(id: Long)
+GET    /                                    controllers.ClienteController.index()
+GET    /pelicula/comprar                    controllers.ClienteController.comprarEntrada()
+GET    /pelicula/:id                        controllers.ClienteController.verFichaPelicula(id: Long)
+
 
 # Administrador
-GET    /admin                  controllers.AdminController.index()
-GET    /admin/pelicula/nueva            controllers.AdminController.nuevaPelicula()
-POST   /admin/pelicula/nueva/crear      controllers.AdminController.crearPelicula()
-GET    /admin/pelicula/:id           controllers.AdminController.verFichaPelicula(id: Long)
-POST   /admin/pelicula/:id/eliminar     controllers.AdminController.eliminarPelicula(id: Long)
-GET    /admin/pelicula/:id/editar       controllers.AdminController.editarPelicula(id: Long)
+GET    /admin                               controllers.AdminController.index()
+GET    /admin/pelicula/nueva                controllers.AdminController.nuevaPelicula()
+POST   /admin/pelicula/nueva/crear          controllers.AdminController.crearPelicula()
+GET    /admin/pelicula/:id                  controllers.AdminController.verFichaPelicula(id: Long)
+POST   /admin/pelicula/:id/eliminar         controllers.AdminController.eliminarPelicula(id: Long)
+GET    /admin/pelicula/:id/editar           controllers.AdminController.editarPelicula(id: Long)
 POST   /admin/pelicula/:id/editar/guardar   controllers.AdminController.guardarCambiosPelicula(id: Long)
-GET    /admin/sesion/nueva            controllers.AdminController.nuevaSesion()
-POST   /admin/sesion/nueva/crear      controllers.AdminController.crearSesion()
-POST   /admin/sesion/:id/eliminar     controllers.AdminController.eliminarSesion(id: Long)
-GET    /admin/sesion/:id/editar       controllers.AdminController.editarSesion(id: Long)
-POST   /admin/sesion/actualizar       controllers.AdminController.actualizarSesion()
-GET    /admin/sala/nueva               controllers.AdminController.nuevaSala()
-POST   /admin/sala/nueva/crear         controllers.AdminController.crearSala()
-POST   /admin/sala/:id/eliminar        controllers.AdminController.eliminarSala(id: String)
+GET    /admin/sesion/nueva                  controllers.AdminController.nuevaSesion()
+POST   /admin/sesion/nueva/crear            controllers.AdminController.crearSesion()
+POST   /admin/sesion/:id/eliminar           controllers.AdminController.eliminarSesion(id: Long)
+GET    /admin/sesion/:id/editar             controllers.AdminController.editarSesion(id: Long)
+POST   /admin/sesion/actualizar             controllers.AdminController.actualizarSesion()
+GET    /admin/sala/nueva                    controllers.AdminController.nuevaSala()
+POST   /admin/sala/nueva/crear              controllers.AdminController.crearSala()
+POST   /admin/sala/:id/eliminar             controllers.AdminController.eliminarSala(id: String)
 
 # Usuario
-GET    /usuario/nuevo                 controllers.UsuarioController.registroNuevo()
-POST   /usuario/nuevo                 controllers.UsuarioController.crearUsuario()
-POST   /usuario/login                 controllers.UsuarioController.iniciarSesion()
+GET    /usuario/nuevo                       controllers.UsuarioController.registroNuevo()
+POST   /usuario/nuevo                       controllers.UsuarioController.crearUsuario()
+POST   /usuario/login                       controllers.UsuarioController.iniciarSesion()

@@ -24,11 +24,11 @@ public class ClienteController extends Controller {
 		
 	}
 
-	public static Result comprarEntrada(Long id) {
+	public static Result comprarEntrada() {
 
-		Pelicula pelicula = Pelicula.find.ref(id);
-
-		return ok(comprar.render(pelicula));
+		return ok(comprar.render(Pelicula.all()));
+		
+		//return redirect(controllers.routes.ClienteController.comprarEntrada().toString() + "#" + id);
 	}
 
 	static Form<Pelicula> peliculaForm = Form.form(Pelicula.class);
