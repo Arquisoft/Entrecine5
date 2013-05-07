@@ -17,12 +17,12 @@
 <div class="content-center">
 	<div class="media">
 		<a class="pull-left thumbnail" href="JavaScript:verCaratula('@pelicula.cartelURL');">
-					<img class="media-object span4" src="@pelicula.cartelURL" alt="Cartel de la película" />
+					<img class="media-object span4" src="@pelicula.cartelURL">
   		</a>
   		<div class="media-body thumbnail">
    		
     		<h3 class="media-heading">@pelicula.titulo     		
-    			<a href="@routes.ClienteController.comprarEntrada()"><button class="btn btn-primary btn-small btn-comprar">Comprar entradas</button></a>
+    			<a href="@routes.TaquillaController.comprarEntrada(pelicula.id)"><button class="btn btn-primary btn-small btn-comprar">Comprar entrada</button></a>
     		</h3>
 
     		<br /><p>
@@ -40,6 +40,35 @@
 	<div id="sinopsis" class="thumbnail sinopsis">
 	<p>@pelicula.sinopsis</p>
 </div>
+</div>
+
+<div class="content-center">
+	<table class="table table-hover">
+  		<caption>Sesiones disponibles</caption>
+  		<thead>
+   		 <tr>
+      		<th>lunes</th>
+      		<th>martes</th>
+      		<th>miércoles</th>
+      		<th>jueves</th>
+    	 </tr>
+  		</thead>
+  
+  		<tbody>
+   		 <tr>
+      		<td><a href="#">17:00</a></td>
+      		<td><a href="#">19:00</a></td>
+      		<td></td>
+      		<td><a href="#">16:45</a></td>
+   		 </tr>
+   		   <tr>
+      		<td><a href="#">13:30</a></td>
+      		<td><a href="#">16:45</a></td>
+      		<td><a href="#">17:00</a></td>
+      		<td><a href="#">19:00</a></td>
+   		 </tr>
+  		</tbody>
+	</table>
 </div>
 
 

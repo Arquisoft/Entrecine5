@@ -1,0 +1,65 @@
+@(pelicula : Pelicula)
+
+
+@head = {
+	<link href="@routes.Assets.at("stylesheets/cliente/fichaPelicula.css")" rel="stylesheet" />
+}
+
+@wrapper("Comprar entrada para: @pelicula.titulo", null)(head){
+	
+<div id="cartel" class="thumbnail span2 text-center">	
+<img src="@pelicula.cartelURL" />
+<h3 class="text-center">@pelicula.titulo</h2>
+</div>
+
+
+
+<div class="content-center">
+		<H3 align="center">Asignación de butacas</H3>
+		<form>
+			<table class="table table-hover">
+			@for(i <- 1 to 10) {   
+					
+					<tr>
+					<td><p >Fila @i</p>
+					
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox1" value="butaca1"> 1
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox2" value="butaca2"> 2
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox3" value="butaca3"> 3
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox4" value="butaca4"> 4
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox5" value="butaca5"> 5
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox6" value="butaca6"> 6
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox7" value="butaca7"> 7
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox8" value="butaca8"> 8
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox9" value="butaca9"> 9
+					</label></td>
+					<td><label class="checkbox inline"> <input type="checkbox"
+						id="inlineCheckbox10" value="butaca10"> 10
+					</label></td>
+					</tr>
+				 
+				}
+			</table>
+
+			<button align="center" type="submit" class="btn btn-primary">Pagar</button>
+		</form>
+
+	</div>
+}

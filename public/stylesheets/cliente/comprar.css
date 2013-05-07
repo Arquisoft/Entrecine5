@@ -1,13 +1,3 @@
-.content-center {
-	width: 66%;
-	margin: 50px auto;
-}
-
-.peli {
-	overflow: auto;
-}
-
-.sesiones {
-	float: right;
-	width: 80%;
+.container-fluid {
+	margin-top: 40px;
 }

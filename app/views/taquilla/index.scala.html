@@ -1,0 +1,36 @@
+@(peliculas : List[Pelicula], peliculaForm:Form[Pelicula], usuario: Usuario)
+
+@import helper._ 
+
+@head = {<link href="@routes.Assets.at("stylesheets/cliente/index.css")" rel="stylesheet" />} 
+
+@wrapper("Entrecine", usuario)(head) {
+
+
+<h2 class="text-center">Punto de Venta</h2>
+
+<div class="container-pelis">
+	<div class="row container-pelis-inner">
+		<ul class="thumbnails">
+			@for(pelicula <- peliculas) {
+
+			<li class="span3"><a
+				href="@routes.TaquillaController.verFichaPelicula(pelicula.id)"
+				class="thumbnail"> <img src="@pelicula.cartelURL" alt="CARTEL"></a>
+				<p class="lead">@pelicula.titulo</p>
+
+				<ul class="thumbnails">
+
+					@for(sesion <- pelicula.sesiones) {
+					<li><p>Inicio: @sesion.horaInicio.format("hh:mm")</p>
+
+						<p>Fin: @sesion.horaFin.format("hh:mm")</p> <a
+						href="@routes.TaquillaController.comprarEntrada(pelicula.id)"
+						class="thumbnail">@sesion.sala.nombre</a></li> }
+				</ul></li> }
+
+
+		</ul>
+	</div>
+
+	}
