@@ -9,14 +9,21 @@
 	
 <div id="cartel" class="thumbnail span2 text-center">	
 <img src="@pelicula.cartelURL" />
-<h3 class="text-center">@pelicula.titulo</h2>
+<h3 class="text-center">@pelicula.titulo</h3>
+<div class="thumbnail">
+<strong>Cantidad: </strong> &nbsp;4<br />
+<strong>Precio: </strong> &nbsp;6€ <br />
+<strong>Total: </strong> &nbsp;24€ <br />
+</div>
+<br />
+<button type="submit" form="butacas" class="btn btn-primary">Confirmar compra</button>
 </div>
 
 
 
 <div class="content-center">
 		<H3 align="center">Asignación de butacas</H3>
-		<form>
+		<form id="butacas" action="/pelicula/pagar" method="get">
 			<table class="table table-hover">
 			<tr>
 				<td><p>Fila 1</p>
@@ -30,14 +37,13 @@
 				<td><button class="btn btn-danger" >7</button></td>
 				<td><button class="btn btn-success" >8</button></td>
 				<td><button class="btn btn-success" >9</button></td>
-				<td><button class="btn btn-success" >10</button></td>
 				
 		
 			</tr>
 			
 			
 			
-			@for(i <- 2 to 10) {
+			@for(i <- 2 to 9) {
 			<tr>
 				<td><p>Fila @i</p>
 				
@@ -50,7 +56,6 @@
 				<td><button class="btn btn-success" >7</button></td>
 				<td><button class="btn btn-success" >8</button></td>
 				<td><button class="btn btn-success" >9</button></td>
-				<td><button class="btn btn-success" >10</button></td>
 				
 		
 			</tr>
@@ -59,8 +64,6 @@
 		
 		
 		</table>
-
-		<button align="center" type="submit" class="btn btn-primary">Pagar</button>
 		</form>
 
 	</div>

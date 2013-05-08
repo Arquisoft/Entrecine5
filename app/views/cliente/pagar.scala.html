@@ -1,14 +1,75 @@
 @import helper._ 
 
-@head = {<link href="@routes.Assets.at("stylesheets/cliente/pasarela.css")" rel="stylesheet" />} 
+@head = {<link href="@routes.Assets.at("stylesheets/cliente/pagar.css")" rel="stylesheet" />} 
 
 @wrapper("Entrecine", null)(head) {
 
-
-	<h1>Pasarela de pago</h1>
+	<br />
+	<div class="text-center">
+		<h1>Pasarela de pago</h1>
+	</div>
 	
+<div class="row">
+	<div class="offset4">
 	<img src="/assets/images/seguridad_pago.jpg" alt="Metodos de pago." />
+	</div>
+</div>
 	
+<div class="row">
+	<div class="offset5">
+		<h3>Datos de la compra</h3>
+	</div>
+	<div class="offset5 span3">
+	
+	<table class="table table-striped">
+	<tr>
+	<td>
+	<strong>Importe:</strong>
+	</td>
+	<td>24€</td>
+	</tr>
+	<tr>
+	<td>
+	<strong>Tipo:</strong>
+	</td>
+	<td>
+	Visa / 4B / Euro6000
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<strong>Número de tarjeta:</strong>
+	</td>
+	<td>
+	************9043
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<strong>Fecha de vencimiento:</strong>
+	</td>
+	<td>
+	07/2013
+	</td>
+	</tr>
+	<tr>
+	<td>
+	<strong>Nombre del titular:</strong>
+	</td>
+	<td>
+	Juan José Erausquin Rodríguez
+	</td>
+	</tr>
+	</table>
+	</div>
+</div>
 
-
+<div class="row">
+<div class="offset5">
+<form action="/pelicula/tickets" method="get">
+<input type="submit" value="Confirmar" class="btn btn-success" />
+<button form="butacas" class="btn btn-danger">Cancelar</button>
+</form>
+</div>
+</div>
 }

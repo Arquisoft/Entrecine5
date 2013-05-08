@@ -7,10 +7,11 @@ GET    /assets/*file                        controllers.Assets.at(path="/public"
 
 # Cliente
 GET    /                                    controllers.ClienteController.index()
+GET    /pelicula/tickets                    controllers.ClienteController.tickets()
 GET    /pelicula/comprar                    controllers.ClienteController.comprarEntrada()
 GET    /pelicula/comprar/butacas/:id        controllers.ClienteController.seleccionButacas(id: Long)
+GET    /pelicula/pagar                      controllers.ClienteController.pagar()
 GET    /pelicula/:id                        controllers.ClienteController.verFichaPelicula(id: Long)
-GET /pelicula/pagar	controllers.ClienteController.pagar()
 
 # Taquilla
 GET    /taquilla                            controllers.TaquillaController.index()
