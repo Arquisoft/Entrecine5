@@ -10,6 +10,7 @@ GET    /                                    controllers.ClienteController.index(
 GET    /pelicula/comprar                    controllers.ClienteController.comprarEntrada()
 GET    /pelicula/comprar/butacas/:id        controllers.ClienteController.seleccionButacas(id: Long)
 GET    /pelicula/:id                        controllers.ClienteController.verFichaPelicula(id: Long)
+GET /pelicula/pagar	controllers.ClienteController.pagar()
 
 # Taquilla
 GET    /taquilla                            controllers.TaquillaController.index()

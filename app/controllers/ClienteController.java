@@ -8,6 +8,7 @@ import views.html.cliente.comprar;
 import views.html.cliente.index;
 import views.html.cliente.fichaPelicula;
 import views.html.cliente.butacas;
+import views.html.cliente.pagar;
 
 public class ClienteController extends Controller {
 
@@ -38,6 +39,11 @@ public class ClienteController extends Controller {
 
 		return ok(butacas.render(pelicula));
 
+	}
+
+	public static Result pagar() {
+		
+		return ok(pagar.render());
 	}
 
 	static Form<Pelicula> peliculaForm = Form.form(Pelicula.class);

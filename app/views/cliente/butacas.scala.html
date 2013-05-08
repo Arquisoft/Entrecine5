@@ -18,47 +18,49 @@
 		<H3 align="center">Asignación de butacas</H3>
 		<form>
 			<table class="table table-hover">
-			@for(i <- 1 to 10) {   
-					
-					<tr>
-					<td><p >Fila @i</p>
-					
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox1" value="butaca1"> 1
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox2" value="butaca2"> 2
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox3" value="butaca3"> 3
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox4" value="butaca4"> 4
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox5" value="butaca5"> 5
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox6" value="butaca6"> 6
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox7" value="butaca7"> 7
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox8" value="butaca8"> 8
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox9" value="butaca9"> 9
-					</label></td>
-					<td><label class="checkbox inline"> <input type="checkbox"
-						id="inlineCheckbox10" value="butaca10"> 10
-					</label></td>
-					</tr>
-				 
-				}
-			</table>
+			<tr>
+				<td><p>Fila 1</p>
+				
+				<td><button class="btn btn-success" >1</button></td>
+				<td><button class="btn btn-success" >2</button></td>
+				<td><button class="btn btn-success" >3</button></td>
+				<td><button class="btn btn-danger" >4</button></td>
+				<td><button class="btn btn-danger" >5</button></td>
+				<td><button class="btn btn-danger" >6</button></td>
+				<td><button class="btn btn-danger" >7</button></td>
+				<td><button class="btn btn-success" >8</button></td>
+				<td><button class="btn btn-success" >9</button></td>
+				<td><button class="btn btn-success" >10</button></td>
+				
+		
+			</tr>
+			
+			
+			
+			@for(i <- 2 to 10) {
+			<tr>
+				<td><p>Fila @i</p>
+				
+				<td><button class="btn btn-success" >1</button></td>
+				<td><button class="btn btn-success" >2</button></td>
+				<td><button class="btn btn-success" >3</button></td>
+				<td><button class="btn btn-success" >4</button></td>
+				<td><button class="btn btn-success" >5</button></td>
+				<td><button class="btn btn-success" >6</button></td>
+				<td><button class="btn btn-success" >7</button></td>
+				<td><button class="btn btn-success" >8</button></td>
+				<td><button class="btn btn-success" >9</button></td>
+				<td><button class="btn btn-success" >10</button></td>
+				
+		
+			</tr>
+			
+			}
+		
+		
+		</table>
 
-			<button align="center" type="submit" class="btn btn-primary">Pagar</button>
+		<button align="center" type="submit" class="btn btn-primary">Pagar</button>
 		</form>
 
 	</div>
