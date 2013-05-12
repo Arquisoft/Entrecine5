@@ -1,0 +1,3 @@
+- Documentación del proyecto Entrecine en PDF.
+- Fichero Enterprise con los diagramas de componentes, paquetes, despliegue, modelo de dominio y modelo Entidad-Relación.
+- Fichero de identificación de integrantes del grupo.
